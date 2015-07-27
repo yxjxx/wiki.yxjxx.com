@@ -167,7 +167,9 @@ alias gd='git diff'
     <Ctrl>+p 向上
     <Ctrl>+f 向下翻页
     <Ctrl>+b 向上翻页
+
     ![zsh补全.png](http://ww3.sinaimg.cn/large/81d2b157jw1e7ry1p92m4j20ej057mxy.jpg)
+
 2. zsh 除了支持目录的补全，还支持命令选项的补全，例如 ls -<TAB><TAB> 会直接列出所有 ls 的参数，
    再也不会出现一个命令打到一半，忘记参数导致重开一个 terminal man 一把。
    ![zsh命令参数补全](http://ww2.sinaimg.cn/large/81d2b157jw1e7ryfepje2j20hj09uaco.jpg)
@@ -179,11 +181,15 @@ alias gd='git diff'
    cd /h/y/D/L/c/<Tab>会自动补全成
    cd /home/yxj/Dropbox/Linux/configuration(当然前提是这种匹配是唯一的)
    ![zsh<Tab>首字母匹配](http://ww4.sinaimg.cn/large/81d2b157jw1e7ryuksq5cj20dw02w3yv.jpg "")
+
 5. 记录你切换过的路径直接输入1~9切换(0是当前目录),用d查看当前stack中存放的历史目录
+
     ![1~9切换目录](http://ww2.sinaimg.cn/large/81d2b157jw1e7rz40abb3j209e075jrv.jpg)
 6. 更强大的目录跳转可以用autojump插件,autojump插件可以记住你所有访问过的目录
    直接`#j Dr`就能跳转到Dropbox目录
+
    ![atuojump](http://ww2.sinaimg.cn/large/81d2b157jw1e7rzbbzfmmj209d03dmx8.jpg "")
+
 7. 更强大的alias
 
 ```
