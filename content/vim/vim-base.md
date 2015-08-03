@@ -19,6 +19,7 @@ o : 在当前行的下面新建一行
 O : 在当前行之前插入新行
 r : 仅仅替换当前字符
 R : 替换当前字符并且自动调到下一字符
+~ : Switch case
 cw: 替换从光标到单词结束,并进入插入模式
 x : 删除光标所在位置的字符(支持数字,如4x:删除光标加其后的字符一共4个)
 dd: 删除整行
@@ -79,6 +80,7 @@ u: 取消上一次的改动   类似于<Ctrl>+z
 
 ```
 加载/保存/推出/修改文件(缓存)
+:e Edit the current file. This is useful to re-edit the current file, when it has been changed outside of Vim.
 :e <文件路径>  : 打开该文件
 :saveas <文件路径> : 保存到指定的文件,类似于另存为
 :x,ZZ或者:wq : 保存和退出 (:x 如果可能的话，只保存)

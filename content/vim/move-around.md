@@ -56,6 +56,15 @@ Ctrl+g显示文件的状态,行数等信息
 . :重复上一个命令
 ```
 
+##Marks
+
+```
+m{a-zA-z} set mark {a-zA-Z} at cursor postion.
+`{a-z} To the mark.
+marks List all the current marks.
+marks {arg} List the marks that are mentioned in {arg}
+```
+
 ##总结
 
 ```
