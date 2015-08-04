@@ -4,9 +4,9 @@ date: 2015-08-02 19:50
 ---
 
 ##1. 三种模式
-1. 命令模式
-2. 插入模式
-3. EX模式
+1. 命令模式(normal/command mode)
+2. 插入模式(insert mode)
+3. EX模式(line mode)
 
 ###1. 在命令模式下
 
