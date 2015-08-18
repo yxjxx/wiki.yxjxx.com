@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>substitute - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux ,python ,mac os x,simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown.Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#vim">vim</a>&nbsp;»&nbsp;substitute</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">substitute</div>
+  <div id="content">
+  <div class="hlcode"><pre><span class="nx">old</span><span class="err">是需要替换的字符串</span><span class="p">,</span><span class="nb">new</span><span class="err">是替换后的字符串</span>
+
+<span class="p">:</span><span class="nb">s</span><span class="p">/</span><span class="nx">old</span><span class="p">/</span><span class="nb">new</span> <span class="o">&lt;</span><span class="nx">ENTER</span><span class="o">&gt;</span><span class="err">替换当前行的第一个</span><span class="nx">old</span>
+
+<span class="p">:</span><span class="nb">s</span><span class="p">/</span><span class="nx">old</span><span class="p">/</span><span class="nb">new</span><span class="p">/</span><span class="nx">g</span><span class="err">当前行的所有</span><span class="nx">old</span><span class="err">进行替换</span><span class="p">,</span>
+
+<span class="err">如果需要进行全局替换</span><span class="p">,</span><span class="err">则要</span><span class="p">:</span>
+<span class="p">:</span><span class="o">%</span><span class="nb">s</span><span class="p">/</span><span class="nx">old</span><span class="p">/</span><span class="nb">new</span><span class="p">/</span><span class="nx">g</span>
+<span class="err">如果需要对指定部分进行替换</span><span class="p">,</span><span class="err">可以用</span><span class="nx">V</span><span class="err">进入</span><span class="nx">visual</span><span class="err">模式</span><span class="p">,</span><span class="err">再进行</span>
+<span class="p">:</span><span class="nb">s</span><span class="p">/</span><span class="nx">old</span><span class="p">/</span><span class="nb">new</span><span class="p">/</span><span class="nx">g</span>
+<span class="err">或者可以指定行数对指定范围进行替换</span><span class="p">:</span>
+<span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="mi">102</span><span class="nb">s</span><span class="p">/</span><span class="nx">old</span><span class="p">/</span><span class="nb">new</span><span class="p">/</span><span class="nx">g</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="mi">102</span><span class="err">行</span><span class="p">)</span>
+</pre></div>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2015 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>

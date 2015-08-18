@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>regular expression - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux ,python ,mac os x,simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown.Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#tool">tool</a>&nbsp;»&nbsp;regular expression</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">regular expression</div>
+  <div id="content">
+  <h1 id="regular-expression">regular-expression</h1>
+<p>参考资料:</p>
+<ol>
+<li><a href="http://msdn.microsoft.com/zh-cn/library/vstudio/az24scfc.aspx">MSDN中关于正则的文档</a></li>
+<li><a href="http://see.xidian.edu.cn/cpp/u/zhengze/">正则30分钟入门</a></li>
+<li><a href="http://see.xidian.edu.cn/cpp/html/1427.html">查表--所有元字符</a></li>
+</ol>
+<hr />
+<p><strong>写在前面,很多初学者都会遇到的一个疑问----正则与通配符不一样:</strong></p>
+<p>正则表达式的特殊字符与一般在命令行输入命令的"通配符"并不相同,例如在通配符中<code>*</code>代表的是0到无限多个字符的意思,但在正则表达式中,<code>*</code>则是重复0到无穷多个得到前一个字符的含义,使用的意思并不相同,不能搞混了!</p>
+<p>例如:删除时使用的<code>rm *.txt</code> 中的<code>*</code>指的是是通配符，意为匹配0个字符或多个字符，正则中的<code>*</code>是匹配该字符的前一个字符的0次或多次出现。就是说在正则中使用<code>*</code>，<code>*</code>的前面必须要有字符。</p>
+<p>再例如通配符 zh<em>.txt 会匹配 zhh.txt、zhxx.txt、zhzh.txt……
+而正则表达式中的 zh</em>.txt 会匹配 zh.txt、zhh.txt、zhhh.txt……</p>
+<p>一个例子</p>
+<div class="hlcode"><pre><span class="err">原来</span><span class="n">bash</span><span class="err">用的是通配符</span><span class="p">,</span><span class="n">zsh</span><span class="err">用的标准正则</span><span class="p">,</span><span class="err">把要匹配的字符串打上引号是一个好习惯</span>
+<span class="n">zsh</span><span class="err">中的</span>
+<span class="err">$</span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">remove</span> <span class="o">--</span><span class="n">purge</span> <span class="err">&#39;</span><span class="n">printer</span><span class="o">-</span><span class="n">driver</span><span class="p">.</span><span class="o">*</span><span class="err">&#39;</span>
+<span class="err">这样就和</span><span class="n">bash</span><span class="err">里面的</span>
+<span class="err">$</span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">remove</span> <span class="o">--</span><span class="n">purge</span> <span class="n">printer</span><span class="o">-</span><span class="n">driver</span><span class="o">*</span>
+<span class="err">效果一样了</span>
+</pre></div>
+
+
+<hr />
+<p><strong>正则表达式基础</strong></p>
+<ol>
+<li>
+<p><code>^word</code> : 查找的word字符在行首,即以word开头的行
+    <code>grep -n '^#' regular-expression</code> : 在文件<code>regular-expression</code>查找以<code>#</code>开头的行</p>
+</li>
+<li>
+<p><code>word$</code> : 查找以word结尾的行
+    <code>grep -n '#$' regular-expression</code></p>
+</li>
+<li>
+<p><code>.</code> : 代表一定有一个字符,除换行符以外的任意一个字符;<code>\S</code>与之类似表示 不是空白字符的任意字符(<code>.</code>可以匹配空格,在例子2中会涉及到)</p>
+</li>
+<li><code>*</code> : 重复0个到无穷多个前一个字符</li>
+<li>[acfg] : 匹配a,c,f,g中的任一个</li>
+<li><code>[0-9]or[a-z]or[0-9a-zA-Z]</code> : 匹配其中的一个字符,<code>\d</code>:表示一个数字</li>
+<li><code>[^list]</code> : 取反,匹配不在list中的项</li>
+<li><code>\{n,m\}</code> : '\'是转义字符,连续n到m个前一个字符     <code>\{n\}</code>:表示连续n个前一个字符     <code>\{n,\}</code> : 连续n个以上</li>
+<li><code>\b</code> : 表示单词的开头或结尾.<code>\bhi\b</code>只能匹配单词<code>hi</code>而不能匹配<code>his</code>或<code>shi</code>等字符串中的部分,而<code>\bhi</code>了一匹配<code>his</code>中的<code>hi</code></li>
+<li><code>\w</code> : 匹配字母或数字或下划线,<code>\W</code>: 匹配任意不是字母，数字，下划线</li>
+<li><code>\s</code> : 匹配任意的空白符,<code>\S</code>:不是空白字符的任意字符</li>
+<li><code>\d</code> : 匹配数字等价于<code>[0-9]</code>,<code>\D</code> : 匹配任意非数字的字符</li>
+</ol>
+<hr />
+<p><strong>扩展正则表达式</strong></p>
+<ol>
+<li><code>+</code> : 重复一个或一个以上的前一个字符</li>
+<li><code>?</code> : 0个或一个前一个字符 ,前一个字符可有可无</li>
+<li><code>|</code> : 用或的方式找出整个字符串</li>
+<li><code>( )</code> : 找出组的字符串   <code>'g(la|oo)d'</code> : 匹配glad和good</li>
+<li><code>( )+</code> : 多个重复组的判别  <code>echo 'AxyzxyzxyzC' | egrep 'A(xyz)+C'</code> : 匹配A开头C结尾中间有一个以上的'xyz'</li>
+</ol>
+<hr />
+<p><strong>例子1</strong>
+Hi, I am Shirley Hilton. I am his wife.</p>
+<p>用<code>I.*e</code>去匹配得到的是<code>['I am Shirley Hilton. I am his wife']</code>,称为贪婪匹配,<code>*</code>会匹配尽量长的结果</p>
+<p>用<code>I.*?e</code>去匹配得到的是<code>['I am Shirle', 'I am his wife']</code>,称为懒惰匹配,最短匹配,在最后的图片爬虫中要用到</p>
+<hr />
+<p><strong>例子2</strong>
+从下面一段文本中，匹配出所有s开头，e结尾的单词。</p>
+<p>site sea sue sweet see case sse ssee loses</p>
+<p>第一次我用的是<code>r"\bs.*?e\b"</code>结果为<code>['site', 'sea sue', 'sweet see', 'sse', 'ssee']</code>出现了<code>sea sue</code>不满足单词的要求,就是说不能有空格,那么把<code>.</code>改为<code>\S</code>即可
+<code>r"\bs\S*?e\b"</code>结果为;
+<code>['site', 'sue', 'see', 'sse', 'ssee']</code></p>
+<hr />
+<p><strong>例子3</strong>
+找出11位手机号码</p>
+<p><code>1\d{10}</code></p>
+<hr />
+<p><strong>python中的正则</strong></p>
+<p>直接逐行解释</p>
+<div class="hlcode"><pre><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">text</span>  <span class="o">=</span> <span class="s">&quot;123 123x 234x&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r&quot;1\d*[x]?&quot;</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">m</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;not match&quot;</span>
+</pre></div>
+
+
+<p>结果:</p>
+<div class="hlcode"><pre><span class="p">[</span><span class="s">&#39;123&#39;</span><span class="p">,</span> <span class="s">&#39;123x&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<hr />
+<p>编译过后的正则,效率更高.</p>
+<div class="hlcode"><pre><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">text</span>  <span class="o">=</span> <span class="s">&quot;123 123x 234x&quot;</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="s">r&quot;1\d*[x]?&quot;</span>
+<span class="n">obj_r1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="c"># print type(obj_r1)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">obj_r1</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">m</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;not match&quot;</span>
+</pre></div>
+
+
+<p>而且编译的过程中可以加入一些其它编译参数如<code>re.I</code>等</p>
+<div class="hlcode"><pre><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">ignorecase_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&quot;yxjxx&quot;</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span><span class="c">#参数re.I表示忽略大小写</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">ignorecase_re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;yxjxx YXJXX yxjXX YxjXX&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">m</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;mot match&quot;</span>
+</pre></div>
+
+
+<p>结果:</p>
+<div class="hlcode"><pre><span class="p">[</span><span class="s">&#39;yxjxx&#39;</span><span class="p">,</span> <span class="s">&#39;YXJXX&#39;</span><span class="p">,</span> <span class="s">&#39;yxjXX&#39;</span><span class="p">,</span> <span class="s">&#39;YxjXX&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<hr />
+<p>更多的编译标志-flags</p>
+<div class="hlcode"><pre><span class="n">re</span><span class="p">.</span><span class="n">S</span>  <span class="o">:</span> <span class="err">使</span> <span class="p">.</span> <span class="err">匹配换行在内的所有字符</span>
+<span class="n">re</span><span class="p">.</span><span class="n">I</span>  <span class="o">:</span> <span class="err">使匹配对大小写不敏感</span>
+<span class="n">re</span><span class="p">.</span><span class="n">L</span>  <span class="o">:</span> <span class="err">做本地化识别</span><span class="p">,</span><span class="err">匹配其它语言中的特殊字符</span>
+<span class="n">re</span><span class="p">.</span><span class="n">M</span>  <span class="o">:</span> <span class="err">多行匹配</span><span class="p">,</span><span class="err">影响</span><span class="o">^</span><span class="err">和$</span>
+<span class="n">re</span><span class="p">.</span><span class="n">X</span>  <span class="o">:</span> <span class="err">正则的多行</span>
+</pre></div>
+
+
+<p><strong>一个补充知识</strong>
+在交互模式中可以看到以<code>'''</code>包含的字符串实际的存储是加上了<code>\n</code>的单行存储</p>
+<div class="hlcode"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">... Hello</span>
+<span class="s">... world</span>
+<span class="s">... I</span>
+<span class="s">... am</span>
+<span class="s">... yxjxx</span>
+<span class="s">... &#39;&#39;&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s">&#39;</span><span class="se">\n</span><span class="s">Hello</span><span class="se">\n</span><span class="s">world</span><span class="se">\n</span><span class="s">I</span><span class="se">\n</span><span class="s">am</span><span class="se">\n</span><span class="s">yxjxx</span><span class="se">\n</span><span class="s">&#39;</span>
+</pre></div>
+
+
+<p>编译标志-flags的例子</p>
+<div class="hlcode"><pre><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c">#########  re.S</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="s">r&#39;yxjxx.me&#39;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="s">&#39;yxjxxzme&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="s">&#39;yxjxx</span><span class="se">\n</span><span class="s">me&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="s">&#39;yxjxx</span><span class="se">\n</span><span class="s">me&#39;</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="s">&#39;yxjxx</span><span class="se">\t</span><span class="s">me&#39;</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+
+<span class="c">#########  re.M</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">hello yxjxx</span>
+<span class="s">yxjxx hello</span>
+<span class="s">Hello yxjxx</span>
+<span class="s">&#39;&#39;&#39;</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="s">r&quot;^yxj&quot;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">s2</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+
+<span class="c">########### re.X</span>
+<span class="n">r3</span> <span class="o">=</span> <span class="s">r&quot;&quot;&quot;</span>
+<span class="s">\d{3,4}</span>
+<span class="s">-?</span>
+<span class="s">\d{8}</span>
+<span class="s">&quot;&quot;&quot;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r3</span><span class="p">,</span><span class="s">&#39;010-12345678&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r3</span><span class="p">,</span><span class="s">&#39;010-12345678&#39;</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c">######### re.I</span>
+<span class="n">r4</span> <span class="o">=</span> <span class="s">r&quot;yx.xx&quot;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r4</span><span class="p">,</span><span class="s">&#39;yxjxx&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r4</span><span class="p">,</span><span class="s">&#39;YXJXX&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r4</span><span class="p">,</span><span class="s">&#39;YXJXX&#39;</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+
+
+<p>结果:</p>
+<div class="hlcode"><pre><span class="p">[</span><span class="s">&#39;yxjxxzme&#39;</span><span class="p">]</span>
+<span class="p">[]</span>
+<span class="p">[</span><span class="s">&#39;yxjxx</span><span class="se">\n</span><span class="s">me&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;yxjxx</span><span class="se">\t</span><span class="s">me&#39;</span><span class="p">]</span>
+<span class="p">[]</span>
+<span class="p">[</span><span class="s">&#39;yxj&#39;</span><span class="p">]</span>
+<span class="p">[]</span>
+<span class="p">[</span><span class="s">&#39;010-12345678&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;yxjxx&#39;</span><span class="p">]</span>
+<span class="p">[]</span>
+<span class="p">[</span><span class="s">&#39;YXJXX&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<hr />
+<p>re库中常用的方法/属性</p>
+<div class="hlcode"><pre><span class="n">match</span><span class="p">()</span>   <span class="err">开头有</span><span class="p">,</span><span class="err">返回一个</span><span class="n">match</span><span class="err">对象</span><span class="p">,</span><span class="err">开头没有返回空</span>
+<span class="n">search</span><span class="p">()</span>  <span class="err">开头</span><span class="p">,</span><span class="err">中间</span><span class="p">,</span><span class="err">结尾有都行</span><span class="p">,</span><span class="err">返回一个对象</span>
+<span class="n">findall</span><span class="p">()</span> <span class="err">匹配所有</span><span class="p">,</span><span class="err">返回一个</span><span class="n">list</span>
+<span class="n">finditer</span><span class="p">()</span> <span class="err">与</span><span class="n">findall</span><span class="p">()</span><span class="err">类似</span><span class="p">,</span><span class="err">只是返回值为迭代器</span>
+</pre></div>
+
+
+<p>match对象的方法</p>
+<div class="hlcode"><pre><span class="n">group</span><span class="p">()</span>
+<span class="n">start</span><span class="p">()</span>
+<span class="n">end</span><span class="p">()</span>
+<span class="n">span</span><span class="p">()</span>
+</pre></div>
+
+
+<hr />
+<p><code>re.sub</code>支持正则的替换
+类似的
+re.subn()
+re.spilt()</p>
+<div class="hlcode"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello yxjxx&quot;</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;yxjxx&#39;</span><span class="p">,</span><span class="s">&#39;python&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">s</span>
+<span class="k">print</span> <span class="n">s1</span>
+
+<span class="n">s2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;y...x&#39;</span><span class="p">,</span><span class="s">&#39;python&#39;</span><span class="p">)</span><span class="c">#字符串的replace方法是不支持正则的</span>
+<span class="k">print</span> <span class="n">s</span>
+<span class="k">print</span> <span class="n">s2</span>
+
+
+<span class="n">rs</span> <span class="o">=</span> <span class="s">r&#39;y...x&#39;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span><span class="s">&#39;python&#39;</span><span class="p">,</span><span class="s">&#39;yxjxx yzzzx yzxzx yzzzz&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span><span class="s">&#39;python&#39;</span><span class="p">,</span><span class="s">&#39;yxjxx yzzzx yzxzx yzzzz&#39;</span><span class="p">)</span>
+
+<span class="nb">str</span> <span class="o">=</span> <span class="s">&#39;123+456*78-9&#39;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">r&#39;\D&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+
+
+<p>结果:</p>
+<div class="hlcode"><pre><span class="n">Hello</span> <span class="n">yxjxx</span>
+<span class="n">Hello</span> <span class="n">python</span>
+<span class="n">Hello</span> <span class="n">yxjxx</span>
+<span class="n">Hello</span> <span class="n">yxjxx</span>
+<span class="n">python</span> <span class="n">python</span> <span class="n">python</span> <span class="n">yzzzz</span>
+<span class="p">(</span><span class="s">&#39;python python python yzzzz&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="p">[</span><span class="s">&#39;123&#39;</span><span class="p">,</span> <span class="s">&#39;456&#39;</span><span class="p">,</span> <span class="s">&#39;78&#39;</span><span class="p">,</span> <span class="s">&#39;9&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>更多<code>re</code>模块的方法可以通过<code>dir(re)</code>和<code>help(re)</code>查看,当然你需要先<code>import re</code></p>
+<hr />
+<p><strong>python正则分组</strong></p>
+<div class="hlcode"><pre><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">find mp3 Hello src=twitter at today</span>
+<span class="s">you are Hello src=facebook at yesterday</span>
+<span class="s">I am yxjxx Hello src=youtube at tomorrom</span>
+<span class="s">&#39;&#39;&#39;</span>
+<span class="c">#找出Hello src=... at 式样的字符串</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="s">r&#39;Hello src=.+ at&#39;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c">#有的时候我们可能只需要src=后面的内容</span>
+<span class="c">#增加分组之后就会只返回分组里面的内容的匹配值</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="s">r&#39;Hello src=(.+) at&#39;</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+
+<p>结果:</p>
+<div class="hlcode"><pre><span class="k">[&#39;Hello src=twitter at&#39;, &#39;Hello src=facebook at&#39;, &#39;Hello src=youtube at&#39;]</span>
+<span class="k">[&#39;twitter&#39;, &#39;facebook&#39;, &#39;youtube&#39;]</span>
+</pre></div>
+
+
+<hr />
+<p><strong>一个小的实例--图片爬虫</strong></p>
+<p><img alt="src='" src="http://ww3.sinaimg.cn/large/81d2b157jw1e8zqii1tvcj20rr07jaef.jpg" /></p>
+<p>就如上图所示,一般网站上的图片链接都有一定规律,我们先取得网站的源代码,然后通过正则表达式匹配图片链接然后通过<code>urllib.urlretrieve()</code>下载下来即可</p>
+<div class="hlcode"><pre><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="k">def</span> <span class="nf">getHtml</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">html</span>
+
+<span class="k">def</span> <span class="nf">getImg</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="s">r&#39;src=&quot;(.*?\.gif)&quot;&#39;</span>
+    <span class="n">img_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+    <span class="n">imglist</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">img_re</span><span class="p">,</span><span class="n">html</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">imgurl</span> <span class="ow">in</span> <span class="n">imglist</span><span class="p">:</span>
+        <span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">imgurl</span><span class="p">,</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">.gif&#39;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">imglist</span>
+
+<span class="n">html</span> <span class="o">=</span> <span class="n">getHtml</span><span class="p">(</span><span class="s">&#39;http://photo.yxjxx.me/post/zhu-yin-gif&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">getImg</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;done&#39;</span>
+</pre></div>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2015 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>
