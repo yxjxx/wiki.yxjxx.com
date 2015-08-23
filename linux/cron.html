@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>cron - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux ,python ,mac os x,simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown.Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#linux">linux</a>&nbsp;»&nbsp;cron</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">cron</div>
+  <div id="content">
+  <p>cron的作用是定时执行命令。每分钟，每小时，每天，或者每周的某一天，也可以是每年的某一天。</p>
+<p>anacron是cron命令的补充，cron命令适合24x7不停机的服务器，anacron适合经常会关机的个人电脑。在每次开机时检测关机期间没能执行的命令并执行。</p>
+<hr />
+<p>cron相关的文件(ubuntu，其它发行版本有差异)</p>
+<ol>
+<li><code>/etc/crontab</code> 系统的cron命令，里面指定了每小时，每天，每月要执行的脚本所在的文件夹</li>
+<li><code>crontab -e</code>命令，修改用户的cron命令列表，格式为<code>m h dom mon dow command</code>(即分 小时 日期 月 星期 命令)，比如每三十分钟重启dropbox的cron命令是这样的<code>*/30 * * * * rsdropbox</code>(<code>/</code>表示除)</li>
+<li><code>crontab -l</code>命令列出用户定义的cron命令</li>
+<li><code>run-parts</code> 可以自定义定时执行指定文件夹下所有的脚本</li>
+<li>cron命令执行的log在<code>/var/log/syslog</code>中，使用<code>grep CRON /var/log/syslog</code>单独查看cron的log</li>
+</ol>
+<hr />
+<p><a href="http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/">cron more details reference</a></p>
+<p><a href="http://www.thegeekstuff.com/2011/05/anacron-examples/">anacron more details reference</a></p>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2015 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>
