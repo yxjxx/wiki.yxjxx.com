@@ -4,8 +4,8 @@ Wiki
 [My personal wiki, powered by simiki.](http://wiki.yxjxx.com)
 
 1. [Quick Start](http://simiki.org/docs/)
-2. [Deploy it to Github Pages](http://simiki.org/docs/deploy.html).
-3. My Best Practice.
+2. [Deploy it to Github Pages](http://simiki.org/docs/deploy.html)
+3. My Best Practice
 
 ~~~
 cd mywiki
