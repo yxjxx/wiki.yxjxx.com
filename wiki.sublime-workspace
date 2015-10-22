@@ -1,0 +1,570 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"say",
+				"say_hi"
+			],
+			[
+				"sta",
+				"static_path"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Primary Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Choose Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				"Primary Quick Build"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Primary Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Choose Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				"Primary Quick Build"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "pci",
+		"selected_items":
+		[
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"paci",
+				"Package Control: Install Package"
+			],
+			[
+				"pare",
+				"Package Control: Remove Package"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"pacis",
+				"Package Control: Install Package"
+			],
+			[
+				"snipp",
+				"Snippet: COOKIE['…']"
+			],
+			[
+				"pai",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"minim",
+				"View: Toggle Minimap"
+			],
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"jav",
+				"Set Syntax: Java"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"jekyll",
+				"Jekyll: New post"
+			],
+			[
+				"preview",
+				"OmniMarkupPreviewer: Preview Current Markup in Browser"
+			],
+			[
+				"packli",
+				"Package Control: List Packages"
+			],
+			[
+				"packl",
+				"Package Control: List Packages"
+			],
+			[
+				"prev",
+				"Permute Lines: Reverse"
+			],
+			[
+				"previ",
+				"OmniMarkupPreviewer: Preview Current Markup in Browser"
+			],
+			[
+				"packi",
+				"Package Control: List Packages"
+			],
+			[
+				"pail",
+				"Package Control: List Packages"
+			],
+			[
+				"packremovep",
+				"Package Control: Remove Package"
+			],
+			[
+				"latextools",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"pains",
+				"Package Control: Install Package"
+			],
+			[
+				"package syn",
+				"Package Syncing: Define Sync Folder"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/yxj/env/wiki.yxjxx.com"
+	],
+	"file_history":
+	[
+		"/Users/yxj/env/wiki.yxjxx.com/wiki.sublime-project",
+		"/Users/yxj/env/wiki.yxjxx.com/_config.yml",
+		"/Users/yxj/env/wiki.yxjxx.com/.gitignore",
+		"/Users/yxj/Desktop/test.md",
+		"/Users/yxj/hello.py",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/Gist/Gist.sublime-settings",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/User/Gist.sublime-settings",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Installed Packages/Gist.sublime-package",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/AdvancedNewFile/README.md",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/AdvancedNewFile/Default (OSX).sublime-keymap",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/Default (OSX).sublime-keymap",
+		"/Users/yxj/exit",
+		"/Users/yxj/Desktop/1.php",
+		"/Users/yxj/Desktop/hello.py",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/yxj/env/wiki.yxjxx.com/content/linux/ssh.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/books/mo-yan.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/linux/cron.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/linux/pipe.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/books/wang-xiaobo.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/linux/mount-a-windows-file-system-from-linux.md",
+		"/Users/yxj/Dropbox/yxjxx.github.io/_posts/2014-07-14-setting-a-brand-new-vps.md",
+		"/Users/yxj/Dropbox/yxjxx.github.io/_posts/2015-08-18-my-personal-wiki-site-is-online-now.md",
+		"/Users/yxj/Dropbox/yxjxx.github.io/_posts/2014-06-12-hello-world.md",
+		"/Users/yxj/Dropbox/yxjxx.github.io/_posts/2015-01-01-Quickly-deploy-shadowsocks.md",
+		"/Users/yxj/.ShadowsocksX/user-rule.txt",
+		"/Users/yxj/.ShadowsocksX/gfwlist.js",
+		"/Users/yxj/Dropbox/dotfiles/.vimrc",
+		"/Users/yxj/.zshrc",
+		"/Users/yxj/env/wiki.yxjxx.com/usage.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/windows/安装程序无法创建新的系统分区，也无法定位现有的系统分区.md",
+		"/Users/yxj/Desktop/20150820.selfcontrol",
+		"/Users/yxj/env/wiki.yxjxx.com/content/vim/note-for-vim-advance-user.md",
+		"/Users/yxj/temp/QQParking/QQBot.py",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/Jekyll/README.md",
+		"/Users/yxj/Dropbox/yxjxx.github.io/_config.yml",
+		"/Users/yxj/Dropbox/dotfiles/.zshrc",
+		"/Users/yxj/env/wiki.yxjxx.com/content/linux/tar.md",
+		"/Users/yxj/mini",
+		"/Users/yxj/env/wiki.yxjxx.com/output/tool/regular-expression.html",
+		"/Users/yxj/Dropbox/List-md/iOS_Apps.md",
+		"/Users/yxj/.vimrc",
+		"/Users/yxj/env/wiki.yxjxx.com/content/tool/regular-expression.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/windows/turn-off-numerical-sorting-in-windows-explorer.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/windows/log-into-windows-automatically-even-you-have-set-a-password..md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/life/10-things-you-need-to-know-about-losing-weight.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/hardware/hhkb.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/tool/zsh.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/tool/git.md",
+		"/Users/yxj/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/yxj/env/wiki.yxjxx.com/content/tool/markdown.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/first-category/hello-simiki.md",
+		"/Users/yxj/env/wiki.yxjxx.com/content/intro/gettingstarted.md",
+		"/Users/yxj/env/mywiki/_config.yml",
+		"/Users/yxj/Dropbox/Note-md/blog_custom.md",
+		"/Users/yxj/Library/Rime/luna_pinyin_simp.custom.yaml",
+		"/Users/yxj/Library/Rime/luna_pinyin.cn_en.dict.yaml",
+		"/Users/yxj/hudbt/斯坦福公开课-机器学习/MachineLearning/Click_index_to_start.txt",
+		"/Users/yxj/Desktop/shadowvpn-0.1.6/install-sh",
+		"/Users/yxj/Desktop/test-file-100M/答案.txt",
+		"/Users/yxj/Desktop/machine-learning-ex1/ex1/computeCost.m",
+		"/Volumes/DaisyDisk 4.0b11/Serial.txt",
+		"/Users/yxj/Developer/FileEncryptDecrypt/FileEncryptDecrypt/Base.lproj/Main.storyboard",
+		"/Users/yxj/Desktop/subtitles.vtt",
+		"/Users/yxj/Desktop/subtitle.txt",
+		"/Users/yxj/hudbt/Matlab R2015a/MD5sum.txt",
+		"/Users/yxj/.bash_profile",
+		"/Volumes/DaisyDIsk 4.0b5/Serial.txt",
+		"/Users/yxj/.zhsrc",
+		"/Users/yxj/Desktop/gdk35ebc46kh.pac",
+		"/Users/yxj/Desktop/practiceRuby.rb",
+		"/Users/yxj/env3/smzdm_daily.py",
+		"/Users/yxj/env3/auto-sign-in/coding-auto-sign-in.sh",
+		"/Users/yxj/env3/auto-sign-in/bubble.py",
+		"/Users/yxj/env3/auto-sign-in/push.log",
+		"/Users/yxj/temp/1.rb",
+		"/Users/yxj/Downloads/example.json",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/FB15E875-FBB6-453E-A36D-F6B3CC01CB0A/Library/Documentation/1.txt",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/6353EA0B-D827-4017-B470-55F29A92D97B/Library/Documentation/1.txt",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/AD931066-3C8E-40F3-8CE7-7790EEFF2EE2/Library/Documentation/1.txt",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/8FE5B6CD-EFBE-4ED9-BF14-6D646A5C80CF/Library/Documentation/1.txt",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/98907D0B-3A9E-4991-8B5A-17F237B0B318/Library/Documentation/1.txt",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/F1123BDF-2460-47AA-81FB-45574F64DEE5/Library/Documentation/1.txt",
+		"/Users/yxj/Downloads/本章小结.txt",
+		"/Users/yxj/Downloads/3-6_key-server-architectur.tex",
+		"/Users/yxj/Documents/1.tex",
+		"/Users/yxj/env/pip-selfcheck.json",
+		"/Users/yxj/Developer/EBoxPro/EBoxPro/Info.plist",
+		"/Users/yxj/Downloads/Netdisk-servers/netdisk-user-server/db/schema.sql",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/1BD35053-E041-421C-8AA2-13D515AE21FA/Documents/CodeSets.java",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/74B87FBE-40B2-4F0C-A1FC-42DF57588CD8/Documents/CodeSets.java",
+		"/Users/yxj/env/tornado_mvc_template/handlers/ajax.py",
+		"/Users/yxj/env/tornado_mvc_template/handlers/index.py",
+		"/Users/yxj/env/tornado_mvc_template/handlers/master.py",
+		"/Users/yxj/Developer/EBoxPro/podfile",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/A40CFADF-0B9D-4856-BCD6-BF795F698CD3/Documents/1.txt",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/B0A2B89D-601A-4934-8A0F-C3432B84E61A/Library/Documentation/1.txt",
+		"/Users/yxj/.lldbinit",
+		"/Users/yxj/Dropbox/2015毕业设计/paper_repo/ebox.md",
+		"/Users/yxj/Downloads/private.xml",
+		"/Users/yxj/temp/Android-Netdisk/app/src/main/java/com/example/fz/android_netdisk/AppConfig.java",
+		"/Users/yxj/temp/Android-Netdisk/app/src/main/java/com/example/fz/android_netdisk/AppController.java",
+		"/Users/yxj/temp/Android-Netdisk/app/src/main/java/com/example/fz/android_netdisk/FileEncryptor.java",
+		"/Users/yxj/Desktop/ende.m",
+		"/Users/yxj/Library/Developer/CoreSimulator/Devices/0ECC010F-A694-4ABB-BBA3-891C04F555B1/data/Containers/Data/Application/E4A8AE9A-6FE8-4061-B0C3-4BCF56729573/Library/Documentation/1.txt",
+		"/Users/yxj/Desktop/fileManager.m",
+		"/Users/yxj/temp/music_platform/handlers/uploadimage.py",
+		"/Users/yxj/env/tornado_mvc_template/urls.py",
+		"/Users/yxj/env/tornado_mvc_template/static/css/style.css",
+		"/Users/yxj/env/tornado_mvc_template/static/js/script.js",
+		"/Users/yxj/env/tornado_mvc_template/static/1.png",
+		"/Users/yxj/temp/music_platform/models/database.py",
+		"/Users/yxj/env/tornado_mvc_template/templates/ajax_form.html",
+		"/Users/yxj/env/tornado_mvc_template/templates/index.html",
+		"/Users/yxj/env/tornado_mvc_template/.gitignore",
+		"/Users/yxj/env/tornado_mvc_template/__init__.py",
+		"/Users/yxj/Developer/EBox/Podfile",
+		"/Users/yxj/Desktop/SwipeTableCell/Podfile",
+		"/Users/yxj/env3/hdfs.py",
+		"/Users/yxj/env/tornado_mvc_template/handlers/__init__.py",
+		"/Users/yxj/Downloads/test(1)/test_suite.py",
+		"/Users/yxj/Library/Rime/squirrel.custom.yaml",
+		"/Users/yxj/Desktop/OperaHDFS.java",
+		"/Users/yxj/Desktop/hadoop_test.java",
+		"/Users/yxj/Desktop/adb_fastboot/安装办法-inexus.txt"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"the",
+			"name",
+			"false",
+			"true",
+			"Monokai",
+			"false",
+			".",
+			",",
+			"fillSnippet",
+			"10.2.143.5",
+			"hello",
+			"color",
+			"是我们的向往",
+			"This",
+			"emacs",
+			"pdflatex",
+			"False",
+			"vim",
+			"mvim"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"172.19.28.6"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 204.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 122.0
+	},
+	"pinned_build_system": "Packages/User/Marked.sublime-build",
+	"project": "wiki.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"py",
+				"~/Desktop/hello.py"
+			],
+			[
+				"php",
+				"~/Desktop/1.php"
+			],
+			[
+				"te",
+				"test.tex"
+			],
+			[
+				"het",
+				"hello.tex"
+			],
+			[
+				"ht",
+				"hello.tex"
+			],
+			[
+				"hell",
+				"hello.aux"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Desktop/blog.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 151.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
