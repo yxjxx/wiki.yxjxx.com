@@ -45,6 +45,9 @@ Linux管道重定向基础
 4. cmd1 || cmd2 如果1 stderr,会执行2
 ```
 
+![Terminal](https://i.imgur.com/S1h8HH2.png)
+
+
 **管道**
 
 1. 管道命令仅会处理stdout不会去处理stderrout
