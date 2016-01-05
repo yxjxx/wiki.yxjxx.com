@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>vim base - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Vim">Vim</a>&nbsp;»&nbsp;vim base</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">vim base</div>
+  <div id="content">
+  <h2 id="1">1. 三种模式</h2>
+<ol>
+<li>命令模式(normal/command mode)</li>
+<li>插入模式(insert mode)</li>
+<li>EX模式(line mode)</li>
+</ol>
+<h3 id="1_1">1. 在命令模式下</h3>
+<div class="hlcode"><pre><span class="n">i</span> <span class="o">:</span> <span class="err">光标前输入</span>
+<span class="n">I</span> <span class="o">:</span> <span class="o">**</span><span class="err">在光标所在行的行首插入</span><span class="o">**</span>
+<span class="n">a</span> <span class="o">:</span> <span class="err">光标后输入</span>
+<span class="n">A</span> <span class="o">:</span> <span class="o">**</span><span class="err">在光标所在行的行尾插入</span><span class="o">**</span>
+<span class="n">o</span> <span class="o">:</span> <span class="err">在当前行的下面新建一行</span>
+<span class="n">O</span> <span class="o">:</span> <span class="err">在当前行之前插入新行</span>
+<span class="n">r</span> <span class="o">:</span> <span class="err">仅仅替换当前字符</span>
+<span class="n">R</span> <span class="o">:</span> <span class="err">替换当前字符并且自动调到下一字符</span>
+<span class="o">~</span> <span class="o">:</span> <span class="n">Switch</span> <span class="k">case</span>
+<span class="nl">cw:</span> <span class="err">替换从光标到单词结束</span><span class="p">,</span><span class="err">并进入插入模式</span>
+<span class="n">x</span> <span class="o">:</span> <span class="err">删除光标所在位置的字符</span><span class="p">(</span><span class="err">支持数字</span><span class="p">,</span><span class="err">如</span><span class="mi">4</span><span class="n">x</span><span class="o">:</span><span class="err">删除光标加其后的字符一共</span><span class="mi">4</span><span class="err">个</span><span class="p">)</span>
+<span class="nl">dd:</span> <span class="err">删除整行</span>
+<span class="n">u</span> <span class="o">:</span> <span class="err">撤销上一次操作</span>
+<span class="n">U</span> <span class="o">:</span> <span class="err">撤销当前行的所有的修改</span>
+<span class="nl">yy:</span> <span class="err">将当前行的内容放入缓冲区</span><span class="p">(</span><span class="err">复制当前行</span><span class="p">)</span>
+<span class="n">nyy</span> <span class="o">:</span> <span class="err">将接下来的</span><span class="n">n</span><span class="err">行的内容放入缓冲区</span><span class="p">(</span><span class="err">复制</span><span class="n">n</span><span class="err">行</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">:</span> <span class="err">将就缓冲区的文本放入光标后</span><span class="p">(</span><span class="err">粘贴</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">:</span> <span class="err">在当前位置之前粘贴</span>
+<span class="o">/</span> <span class="o">:</span> <span class="err">向下查找关键字，</span><span class="n">n</span><span class="err">继续向下</span>
+<span class="o">?</span> <span class="o">:</span> <span class="err">向上查找关键字，</span><span class="n">N</span><span class="err">继续向上</span>
+</pre></div>
+
+
+<h3 id="2">2.插入模式</h3>
+<div class="hlcode"><pre><span class="err">按</span><span class="n">i</span><span class="p">,</span><span class="n">I</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">o</span><span class="p">,</span><span class="n">O</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="err">进入输入文本</span>
+</pre></div>
+
+
+<p>operators and motions 模式</p>
+<div class="hlcode"><pre><span class="err">比如`</span><span class="n">d</span><span class="err">`是一种</span> <span class="n">operator</span> <span class="err">表示</span> <span class="n">delete</span> <span class="p">,</span> <span class="n">motion</span> <span class="err">就是光标的移动</span><span class="p">,</span><span class="err">常见的有</span>
+<span class="nl">w:</span><span class="err">一个单词</span><span class="p">(</span><span class="err">光标当前位置到单词结尾包含空格</span><span class="p">)</span>
+<span class="nl">e:</span><span class="err">当前单词的结尾</span><span class="p">,</span><span class="err">比</span><span class="n">w</span><span class="err">少一个空格</span>
+<span class="err">$</span><span class="o">:</span><span class="err">行尾</span>
+</pre></div>
+
+
+<p><code>c</code> 也是一种<code>operator</code>表示 change ,比如 <code>ce</code>:delete the word to the end and place you in the INSERT MODE,就是相当与<code>de+i</code></p>
+<h3 id="3-ex">3. EX模式</h3>
+<div class="hlcode"><pre><span class="err">在命令模式下输入</span><span class="s1">&#39;:&#39;</span><span class="err">进入</span><span class="nx">EX</span><span class="err">模式</span>
+
+<span class="nx">w</span> <span class="p">:</span> <span class="err">保存</span>
+<span class="nx">q</span> <span class="p">:</span> <span class="err">退出</span>
+<span class="nx">wq</span><span class="p">:</span> <span class="err">保存并退出</span>
+<span class="nx">x</span> <span class="p">:</span> <span class="err">保存并退出</span>
+<span class="nx">q</span><span class="o">!</span><span class="p">:</span> <span class="err">不保存</span>
+<span class="p">:</span><span class="nb">set</span> <span class="nx">nu</span> <span class="p">:</span> <span class="err">显示行号</span>
+<span class="p">:</span><span class="o">!</span> <span class="err">系统命令</span> <span class="err">执行系统命令</span>
+<span class="p">:</span><span class="nx">sh</span> <span class="err">切换命令行</span><span class="p">,</span><span class="err">按</span><span class="o">&lt;</span><span class="nx">ctrl</span><span class="o">&gt;+</span><span class="nb">d</span><span class="err">返回刚才的</span><span class="nx">vim</span><span class="err">界面</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="4">4. 取消和恢复</h3>
+<div class="hlcode"><pre><span class="err">命令模式下</span><span class="p">:</span>
+<span class="nx">u</span><span class="p">:</span> <span class="err">取消上一次的改动</span>   <span class="err">类似于</span><span class="o">&lt;</span><span class="nx">Ctrl</span><span class="o">&gt;+</span><span class="nb">z</span>
+<span class="o">&lt;</span><span class="nx">Ctrl</span><span class="o">&gt;+</span><span class="nb">r</span> <span class="p">:</span> <span class="err">恢复</span>  <span class="err">类似于</span><span class="o">&lt;</span><span class="nx">Ctrl</span><span class="o">&gt;+</span><span class="nx">y</span>
+</pre></div>
+
+
+<h3 id="5">5. 同时编辑多个文件</h3>
+<div class="hlcode"><pre><span class="err">加载</span><span class="o">/</span><span class="err">保存</span><span class="o">/</span><span class="err">推出</span><span class="o">/</span><span class="err">修改文件</span><span class="p">(</span><span class="err">缓存</span><span class="p">)</span>
+<span class="o">:</span><span class="n">e</span> <span class="n">Edit</span> <span class="n">the</span> <span class="n">current</span> <span class="n">file</span><span class="p">.</span> <span class="n">This</span> <span class="n">is</span> <span class="n">useful</span> <span class="n">to</span> <span class="n">re</span><span class="o">-</span><span class="n">edit</span> <span class="n">the</span> <span class="n">current</span> <span class="n">file</span><span class="p">,</span> <span class="n">when</span> <span class="n">it</span> <span class="n">has</span> <span class="n">been</span> <span class="n">changed</span> <span class="n">outside</span> <span class="n">of</span> <span class="n">Vim</span><span class="p">.</span>
+<span class="o">:</span><span class="n">e</span> <span class="o">&lt;</span><span class="err">文件路径</span><span class="o">&gt;</span>  <span class="o">:</span> <span class="err">打开该文件</span>
+<span class="o">:</span><span class="n">saveas</span> <span class="o">&lt;</span><span class="err">文件路径</span><span class="o">&gt;</span> <span class="o">:</span> <span class="err">保存到指定的文件</span><span class="p">,</span><span class="err">类似于另存为</span>
+<span class="o">:</span><span class="n">x</span><span class="p">,</span><span class="n">ZZ</span><span class="err">或者</span><span class="o">:</span><span class="n">wq</span> <span class="o">:</span> <span class="err">保存和退出</span> <span class="p">(</span><span class="o">:</span><span class="n">x</span> <span class="err">如果可能的话，只保存</span><span class="p">)</span>
+<span class="o">:</span><span class="n">q</span><span class="o">!</span> <span class="o">:</span> <span class="err">退出但不保存，使用</span><span class="o">:</span><span class="n">qa</span><span class="o">!</span><span class="err">，即使在缓存中还有已经修改的也会退出。</span>
+<span class="o">:</span><span class="n">bn</span><span class="p">(</span><span class="err">对比</span><span class="o">:</span><span class="n">bp</span><span class="p">)</span> <span class="o">:</span> <span class="err">显示下一个</span><span class="p">(</span><span class="err">上一个</span><span class="p">)</span><span class="err">文件缓存</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="err">将选中的文本写入到新的文本文件中</span>
+<span class="n">VISUAL</span> <span class="n">MODE</span>  <span class="o">---&gt;</span> <span class="err">`</span><span class="o">:</span><span class="n">w</span> <span class="n">FIELNAME</span><span class="err">`</span> <span class="p">(</span><span class="err">将视图模式选中的文本写入到</span><span class="n">FILENAME</span><span class="err">文件中</span><span class="p">)</span>
+
+<span class="err">将另一个文本中的内容插入到当前文本`</span><span class="o">:</span><span class="n">r</span> <span class="n">FIELNAME</span><span class="err">`</span>
+<span class="err">也可以是输入输出流比如`</span><span class="o">:</span><span class="n">r</span> <span class="o">!</span><span class="n">ls</span><span class="err">`</span>
+
+<span class="err">打开多个文件</span>
+<span class="n">vim</span> <span class="n">filename1</span> <span class="n">filename2</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="err">分割窗口</span>
+<span class="p">:</span><span class="nx">sp</span><span class="p">{</span><span class="nb">filename</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="nx">ctrl</span><span class="o">&gt;+</span><span class="nx">w</span><span class="o">+</span><span class="err">向上箭头</span>
+<span class="o">&lt;</span><span class="nx">ctrl</span><span class="o">&gt;+</span><span class="nx">w</span><span class="o">+</span><span class="err">向下箭头，切换工作区</span>
+<span class="nx">ctrl</span><span class="o">+</span><span class="nx">w</span><span class="err">连按两次在打开的多个文件之间切换</span>
+</pre></div>
+
+
+<h3 id="6">6. 帮助查询</h3>
+<p>命令模式下</p>
+<ol>
+<li><code>:help</code>查看VIM帮助文件(完整版,英文)</li>
+<li><code>:help &lt;cmd&gt;</code> :查看某一命令的帮助</li>
+<li>vimrc中的很多设置也可以通过<code>:help showcmd</code>这样的方式查看</li>
+<li>另外`/usr/share/vim/vim74/doc/options.txt &amp; vimrc_example.txt</li>
+<li>Tab键补全</li>
+<li>Ctrl+D显示一个可供补全的列表</li>
+<li>:help c_CTRL-D</li>
+<li>:help vimrc-intro</li>
+</ol>
+<p>帮助手册查看用到的快捷键:</p>
+<div class="hlcode"><pre><span class="err">跳转到一个主题</span><span class="o">:</span> <span class="err">将光标置于标签</span> <span class="p">(</span><span class="err">例如</span> <span class="n">usr_01</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span> <span class="err">上然后输入</span> <span class="n">CTRL</span><span class="o">-</span><span class="p">]</span><span class="err">。</span>
+<span class="err">跳回</span><span class="o">:</span> <span class="err">键入</span> <span class="n">CTRL</span><span class="o">-</span><span class="n">T</span><span class="err">。</span>
+<span class="err">翻页：键入</span> <span class="n">CTRL</span><span class="o">-</span><span class="n">F</span><span class="o">/</span><span class="n">B</span>
+</pre></div>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>tar and zip - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Linux">Linux</a>&nbsp;»&nbsp;tar and zip</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">tar and zip</div>
+  <div id="content">
+  <h1 id="compressing-files-under-linux">Compressing files under Linux</h1>
+<hr />
+<p>NO DEEP SHIT!</p>
+<hr />
+<p>本文简短的介绍一下三个命令,足够应对日常压缩,解压缩的任务.更复杂的命令参数可以自己<code>man</code>一下或者在网络上搜索.</p>
+<p><code>tar</code> : 打包命令,把一组文件和文件夹变成一个常规文件,没有压缩空间的功能.
+<code>gzip</code> &amp; <code>bzip2</code> : 具有压缩解压缩的功能,会将文件内容重新编码,节省空间.</p>
+<hr />
+<h2 id="_1">压缩文件</h2>
+<p><code>tar -zcvf filename.tar.gz folder/file</code></p>
+<div class="hlcode"><pre><span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span>  <span class="o">&gt;</span><span class="n">ls</span>
+<span class="n">haha</span><span class="p">.</span><span class="n">txt</span>  <span class="n">yxj</span><span class="p">.</span><span class="n">txt</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span>  <span class="o">&gt;</span><span class="n">tar</span> <span class="o">-</span><span class="n">zvcf</span> <span class="n">mycompress</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="nl">tar:</span> <span class="n">Cowardly</span> <span class="n">refusing</span> <span class="n">to</span> <span class="n">create</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">archive</span>
+<span class="n">Try</span> <span class="err">`</span><span class="n">tar</span> <span class="o">--</span><span class="n">help</span><span class="err">&#39;</span> <span class="n">or</span> <span class="err">`</span><span class="n">tar</span> <span class="o">--</span><span class="n">usage</span><span class="err">&#39;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="p">.</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span>  <span class="o">&gt;</span><span class="n">tar</span> <span class="o">-</span><span class="n">zvcf</span> <span class="n">mycompress</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span> <span class="p">.</span><span class="o">/</span><span class="n">haha</span><span class="p">.</span><span class="n">txt</span> <span class="p">.</span><span class="o">/</span><span class="n">yxj</span><span class="p">.</span><span class="n">txt</span>
+<span class="p">.</span><span class="o">/</span><span class="n">haha</span><span class="p">.</span><span class="n">txt</span>
+<span class="p">.</span><span class="o">/</span><span class="n">yxj</span><span class="p">.</span><span class="n">txt</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span>  <span class="o">&gt;</span><span class="n">ls</span>
+<span class="n">haha</span><span class="p">.</span><span class="n">txt</span>  <span class="n">mycompress</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>  <span class="n">yxj</span><span class="p">.</span><span class="n">txt</span>
+</pre></div>
+
+
+<ol>
+<li><code>-z</code> : 使用gzip进行压缩</li>
+<li><code>-j</code> : 使用bzip2进行压缩,具有更高的压缩比 <code>tar -jcv -f filename.tar.gz folder/file</code></li>
+<li><code>-c</code> : 表示压缩</li>
+<li><code>-v</code> : 显示详细信息</li>
+<li><code>-f</code> : 文件和文件夹列表</li>
+<li><code>filename.tar.gz</code> : 压缩之后的压缩包的名字</li>
+<li><code>folder/file</code> : 文件和文件夹列表,多个文件以空格隔开</li>
+</ol>
+<p>注意到<code>-f</code>参数的含义,最好将<code>tar -zcvf filename.tar.gz folder/file</code>改写成 <code>tar -zcv -f filename.tar.gz folder/file</code></p>
+<hr />
+<h2 id="_2">解压缩</h2>
+<p>将<code>-c</code>参数换成<code>-x</code>即可</p>
+<p><code>tar -jxv -f mycom.tar.bz2</code> : 将<code>mycom.tar.bz2</code>在当前目录下解压缩.</p>
+<p>如果需要解压到制定的目录可以使用<code>-C</code>参数
+<code>tar -jxv -f mycom.tar.bz2 -C ./folder/</code></p>
+<div class="hlcode"><pre><span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">folder</span>  <span class="o">&gt;</span><span class="n">la</span>
+<span class="n">total</span> <span class="mi">0</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">folder</span>  <span class="o">&gt;</span><span class="n">tar</span> <span class="o">-</span><span class="n">jxv</span> <span class="o">-</span><span class="n">f</span> <span class="p">..</span><span class="o">/</span><span class="n">mycom</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span> <span class="o">-</span><span class="n">C</span> <span class="o">~/</span><span class="n">test</span><span class="o">/</span><span class="n">folder</span>
+<span class="p">.</span><span class="o">/</span>
+<span class="p">.</span><span class="o">/</span><span class="n">mycompress</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="p">.</span><span class="o">/</span><span class="n">yxj</span><span class="p">.</span><span class="n">txt</span>
+<span class="p">.</span><span class="o">/</span><span class="n">mycom</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="p">.</span><span class="o">/</span><span class="n">haha</span><span class="p">.</span><span class="n">txt</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">folder</span>  <span class="o">&gt;</span><span class="n">ls</span>
+<span class="n">haha</span><span class="p">.</span><span class="n">txt</span>  <span class="n">mycompress</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>  <span class="n">mycom</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>  <span class="n">yxj</span><span class="p">.</span><span class="n">txt</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">folder</span>  <span class="o">&gt;</span>
+</pre></div>
+
+
+<p>只查看tar文件中包含那些文件不解压<code>-t</code>参数</p>
+<div class="hlcode"><pre><span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span><span class="o">/</span><span class="n">test</span>  <span class="o">&gt;</span><span class="n">tar</span> <span class="o">-</span><span class="n">jtv</span> <span class="o">-</span><span class="n">f</span> <span class="n">mycom</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="n">yxj</span><span class="o">/</span><span class="n">yxj</span>           <span class="mi">0</span> <span class="mi">2014</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">12</span> <span class="mi">09</span><span class="o">:</span><span class="mi">12</span> <span class="p">.</span><span class="o">/</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="n">yxj</span><span class="o">/</span><span class="n">yxj</span>         <span class="mi">291</span> <span class="mi">2014</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">12</span> <span class="mi">09</span><span class="o">:</span><span class="mo">07</span> <span class="p">.</span><span class="o">/</span><span class="n">mycompress</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="n">yxj</span><span class="o">/</span><span class="n">yxj</span>         <span class="mi">199</span> <span class="mi">2014</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">09</span> <span class="mi">19</span><span class="o">:</span><span class="mi">13</span> <span class="p">.</span><span class="o">/</span><span class="n">yxj</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="n">yxj</span><span class="o">/</span><span class="n">yxj</span>         <span class="mi">677</span> <span class="mi">2014</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">12</span> <span class="mi">09</span><span class="o">:</span><span class="mi">12</span> <span class="p">.</span><span class="o">/</span><span class="n">mycom</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="n">yxj</span><span class="o">/</span><span class="n">yxj</span>           <span class="mi">0</span> <span class="mi">2014</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">12</span> <span class="mi">09</span><span class="o">:</span><span class="mo">04</span> <span class="p">.</span><span class="o">/</span><span class="n">haha</span><span class="p">.</span><span class="n">txt</span>
+</pre></div>
+
+
+<hr />
+<p>如果你使用强大的zsh可以按如下方式设置你的<code>.zshrc</code>,直接键入文件名,自动判断之后在当前文件夹解压,省去键入命令的麻烦</p>
+<div class="hlcode"><pre><span class="n">alias</span> <span class="o">-</span><span class="n">s</span> <span class="n">c</span><span class="o">=</span><span class="n">vim</span>         <span class="err">#在命令行直接输入后缀为</span> <span class="n">c</span> <span class="err">的文件名，会在</span> <span class="n">vi</span> <span class="err">中打开</span><span class="p">,</span><span class="err">下类似</span>
+<span class="n">alias</span> <span class="o">-</span><span class="n">s</span> <span class="n">gz</span><span class="o">=</span><span class="err">&#39;</span><span class="n">tar</span> <span class="o">-</span><span class="n">xzvf</span><span class="err">&#39;</span>  <span class="err">#在命令行直接输入后缀为</span> <span class="n">gz</span> <span class="err">的文件名，会用</span><span class="n">tar</span> <span class="o">-</span><span class="n">xzvf</span><span class="err">解压</span>
+<span class="n">alias</span> <span class="o">-</span><span class="n">s</span> <span class="n">tgz</span><span class="o">=</span><span class="err">&#39;</span><span class="n">tar</span> <span class="o">-</span><span class="n">xzvf</span><span class="err">&#39;</span>
+<span class="n">alias</span> <span class="o">-</span><span class="n">s</span> <span class="n">zip</span><span class="o">=</span><span class="err">&#39;</span><span class="n">unzip</span><span class="err">&#39;</span>
+<span class="n">alias</span> <span class="o">-</span><span class="n">s</span> <span class="n">bz2</span><span class="o">=</span><span class="err">&#39;</span><span class="n">tar</span> <span class="o">-</span><span class="n">xjvf</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<hr />
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>
