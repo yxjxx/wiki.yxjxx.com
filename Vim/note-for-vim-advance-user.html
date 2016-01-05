@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>note for vim advance user - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Vim">Vim</a>&nbsp;»&nbsp;note for vim advance user</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">note for vim advance user</div>
+  <div id="content">
+  <h1 id="vim-advance-user">vim advance user</h1>
+<h3 id="lecture-2">Lecture 2</h3>
+<div class="hlcode"><pre><span class="n">i</span><span class="o">:</span> <span class="n">inside</span>
+<span class="n">a</span><span class="o">:</span> <span class="n">around</span><span class="o">,</span> <span class="n">plus</span> <span class="n">one</span> <span class="n">after</span> <span class="n">space</span>
+
+<span class="n">v</span><span class="o">:</span> <span class="n">visual</span>
+<span class="n">d</span><span class="o">:</span> <span class="n">delete</span>
+<span class="n">y</span><span class="o">:</span> <span class="n">yank</span><span class="o">(</span><span class="n">copy</span><span class="o">)</span>
+<span class="n">c</span><span class="o">:</span> <span class="n">change</span>
+
+<span class="n">w</span><span class="o">:</span> <span class="n">word</span>
+<span class="n">W</span><span class="o">:</span> <span class="n">words</span> <span class="n">until</span> <span class="n">space</span>
+<span class="n">p</span><span class="o">:</span> <span class="n">paragraph</span>
+<span class="n">s</span><span class="o">:</span> <span class="n">sentence</span>
+<span class="n">t</span><span class="o">:</span> <span class="n">tag</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="nt">viw</span><span class="o">:</span> <span class="nt">entire</span> <span class="nt">word</span>
+<span class="nt">vaw</span><span class="o">:</span> <span class="nt">entire</span> <span class="nt">word</span> <span class="nt">and</span> <span class="nt">one</span> <span class="nt">after</span> <span class="nt">space</span>
+
+<span class="nt">diw</span>
+<span class="nt">daw</span>
+
+<span class="nt">vit</span>
+<span class="nt">vat</span>
+
+<span class="nt">vi</span><span class="o">(</span> <span class="o">==</span> <span class="nt">vib</span>
+<span class="nt">vi</span><span class="o">)</span>
+<span class="nt">vi</span><span class="p">{</span> <span class="o">==</span> <span class="n">viB</span>
+<span class="n">vi</span><span class="p">}</span>
+<span class="nt">vi</span><span class="cp">[</span>
+<span class="nx">vi</span><span class="cp">]</span>
+</pre></div>
+
+
+<h3 id="lecture-3">Lecture 3</h3>
+<div class="hlcode"><pre><span class="nx">autocmd</span> <span class="nx">event</span> <span class="nx">pattern</span> <span class="nb">command</span>
+
+<span class="nx">syntax</span> <span class="k">on</span>
+<span class="nx">filetype</span> <span class="nx">indent</span> <span class="k">on</span>
+<span class="nb">set</span> <span class="nx">smartindent</span>
+<span class="nx">autocmd</span> <span class="nx">BufRead</span><span class="p">,</span> <span class="nx">BufWritePre</span> <span class="o">*</span><span class="bp">.</span><span class="nx">html</span> <span class="nx">normal</span> <span class="n">gg</span><span class="o">=</span><span class="nx">G</span> <span class="s2">&quot;Format html files</span>
+
+<span class="s2">&quot;</span><span class="nx">help</span> <span class="nx">autocmd</span><span class="na">-events</span>
+<span class="nb">set</span> <span class="nx">filetype</span><span class="o">?</span> <span class="o">==</span> <span class="nb">set</span> <span class="nb">ft</span><span class="o">?</span>
+
+<span class="nx">autocmd</span> <span class="nx">Filetype</span> <span class="nx">html</span> <span class="nx">nnoremap</span> <span class="o">&lt;</span><span class="nx">leader</span><span class="o">&gt;</span><span class="nx">c</span> <span class="nx">I</span><span class="o">&lt;!--&lt;</span><span class="nx">esc</span><span class="o">&gt;</span><span class="nx">A</span><span class="o">--&gt;&lt;</span><span class="nx">esc</span><span class="o">&gt;</span>
+<span class="nx">autocmd</span> <span class="nx">Filetype</span> <span class="nb">javascript</span> <span class="nx">nnoremap</span> <span class="o">&lt;</span><span class="nx">leader</span><span class="o">&gt;</span><span class="nx">c</span> <span class="nx">I</span><span class="c1">//&lt;esc&gt;</span>
+
+<span class="nx">augroup</span> <span class="nx">JavaScriptCmds</span>
+        <span class="nx">autocmd</span><span class="o">!</span> <span class="s2">&quot;使本组 autocmd 失效（It seems not work)</span>
+<span class="s2">        autocmd Filetype javascript nnoremap &lt;leader&gt;r :!node %&lt;cr&gt;</span>
+<span class="s2">        autocmd Filetype javascript nnoremap &lt;leader&gt;c I//&lt;esc&gt;</span>
+<span class="s2">augroup END</span>
+</pre></div>
+
+
+<h3 id="lecture-4">Lecture 4</h3>
+<div class="hlcode"><pre><span class="o">:</span><span class="n">set</span> <span class="n">number</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">nonumber</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">number</span><span class="o">!</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">number</span><span class="o">?</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">relativenumber</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">background</span><span class="o">=</span><span class="n">dark</span><span class="o">/</span><span class="n">light</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">background</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">bg</span><span class="o">?</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">wrap</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">nowrap</span>
+<span class="o">:</span><span class="n">setlocal</span> <span class="n">wrap</span>
+<span class="o">:</span><span class="n">setl</span> <span class="n">wrap</span>
+</pre></div>
+
+
+<h3 id="lecture-5">Lecture 5</h3>
+<div class="hlcode"><pre><span class="p">:</span><span class="kt">map</span>
+
+<span class="p">:</span><span class="nb">set</span> <span class="n">textwidth</span><span class="o">=</span><span class="mi">50</span>
+<span class="p">:</span><span class="nb">set</span> <span class="n">numberwidth</span><span class="o">=</span><span class="mi">3</span>
+<span class="p">:</span><span class="nb">set</span> <span class="nx">linebreak</span>
+<span class="p">:</span><span class="nb">set</span> <span class="nx">nolinebreak</span>
+<span class="p">:</span><span class="nb">set</span> <span class="n">showbreak</span><span class="o">=</span><span class="s1">&#39;&gt; &#39;</span>
+
+<span class="k">let</span> <span class="n">mapleader</span><span class="o">=</span><span class="s1">&#39;,&#39;</span>
+<span class="nx">noremap</span> <span class="o">&lt;</span><span class="nb">left</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nx">nop</span><span class="o">&gt;</span>
+<span class="nx">noremap</span> <span class="o">&lt;</span><span class="nb">up</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nx">nop</span><span class="o">&gt;</span>
+
+<span class="p">:</span><span class="nx">w</span> <span class="nx">foo2</span>
+<span class="p">:</span><span class="nx">saveas</span> <span class="nx">foo2</span>
+</pre></div>
+
+
+<h3 id="lecture-6">Lecture 6</h3>
+<div class="hlcode"><pre> <span class="o">:</span><span class="n">set</span> <span class="n">scrolloff</span><span class="o">=</span><span class="mi">5</span>
+ <span class="o">:</span><span class="n">set</span> <span class="n">showmode</span>
+ <span class="o">:</span><span class="n">set</span> <span class="n">noshowmode</span>
+ <span class="o">:</span><span class="n">set</span> <span class="n">wildmenu</span>
+ <span class="o">:</span><span class="n">set</span> <span class="n">wildmode</span><span class="o">=</span><span class="n">full</span>
+ <span class="o">:</span><span class="n">set</span> <span class="n">cursorline</span>
+ <span class="o">:</span><span class="n">set</span> <span class="n">undofile</span>
+ <span class="o">:</span><span class="n">set</span> <span class="n">gdefault</span>
+</pre></div>
+
+
+<h3 id="lecture-7">Lecture 7</h3>
+<p><strong>clipborad</strong></p>
+<div class="hlcode"><pre><span class="o">:</span><span class="n">reg</span>
+
+ <span class="k">default</span> <span class="k">register</span> <span class="s">&quot;&quot;</span>
+
+ <span class="s">&quot;&quot;</span><span class="n">add</span><span class="o">:</span> <span class="n">delete</span> <span class="n">the</span> <span class="n">line</span> <span class="n">and</span> <span class="n">copy</span> <span class="n">it</span> <span class="n">into</span> <span class="k">register</span> <span class="s">&quot;a</span>
+ <span class="s">&quot;ap : paste the content in &quot;</span><span class="n">a</span> <span class="k">register</span>
+
+ <span class="n">anything</span> <span class="n">you</span> <span class="n">yank</span> <span class="n">will</span> <span class="n">also</span> <span class="n">go</span> <span class="n">to</span> <span class="s">&quot;0</span>
+
+ <span class="s">&quot;q</span>
+ <span class="err">@</span><span class="n">q</span> <span class="n">record</span> <span class="n">your</span> <span class="n">motions</span>
+</pre></div>
+
+
+<h3 id="lecture-8">Lecture 8</h3>
+<p><strong>Insert mode</strong></p>
+<div class="hlcode"><pre><span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">h</span><span class="o">&gt;:</span> <span class="n">backspace</span>
+<span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">w</span><span class="o">&gt;:</span> <span class="n">delete</span> <span class="n">a</span> <span class="n">word</span> <span class="n">before</span> <span class="n">the</span> <span class="n">cursor</span>
+<span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">u</span><span class="o">&gt;:</span> <span class="n">delete</span> <span class="n">the</span> <span class="n">words</span> <span class="n">to</span> <span class="n">the</span> <span class="n">beginning</span> <span class="n">of</span> <span class="n">the</span> <span class="n">line</span> <span class="n">before</span> <span class="n">the</span> <span class="n">cursor</span>
+<span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">v</span><span class="o">&gt;</span><span class="p">[</span><span class="n">anykey</span><span class="p">]</span><span class="o">:</span> <span class="n">inset</span> <span class="p">[</span><span class="n">anykey</span><span class="p">]</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">vim</span> <span class="n">key</span> <span class="n">code</span> <span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="o">:</span> <span class="o">^</span><span class="n">M</span> <span class="k">for</span> <span class="n">enter</span><span class="p">,</span> <span class="o">^</span><span class="p">[</span> <span class="k">for</span> <span class="n">ESC</span>
+<span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">o</span><span class="o">&gt;:</span> <span class="n">temporaily</span> <span class="n">to</span> <span class="n">cmd</span> <span class="n">mode</span><span class="p">.</span> <span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">o</span><span class="o">&gt;</span><span class="n">j</span> <span class="n">go</span> <span class="n">down</span> <span class="n">oneline</span> <span class="n">and</span> <span class="n">still</span> <span class="n">in</span> <span class="n">insert</span> <span class="n">mode</span>
+<span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">r</span><span class="o">&gt;</span><span class="p">[</span><span class="n">anyreg</span><span class="p">]</span><span class="o">:</span> <span class="n">paste</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="p">[</span><span class="n">anyreg</span><span class="p">].</span> <span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">r</span><span class="o">&gt;</span><span class="n">q</span>
+<span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">r</span><span class="o">&gt;=:</span> <span class="n">execute</span> <span class="n">any</span> <span class="n">vimscript</span><span class="p">.</span> <span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">c</span><span class="o">-</span><span class="n">r</span><span class="o">&gt;=</span><span class="mi">7</span><span class="o">*</span><span class="mi">52</span> <span class="n">it</span> <span class="n">will</span> <span class="n">paste</span> <span class="mi">364</span> <span class="n">into</span> <span class="n">where</span> <span class="n">the</span> <span class="n">cursor</span> <span class="n">was</span><span class="p">.</span>
+</pre></div>
+
+
+<h3 id="lecture-9">Lecture 9</h3>
+<p><strong>map</strong></p>
+<div class="hlcode"><pre><span class="p">:</span><span class="nx">re</span> <span class="nx">means</span><span class="p">:</span> <span class="nx">recursive</span>
+<span class="p">:</span><span class="kt">map</span>
+<span class="p">:</span><span class="nx">nmap</span> <span class="nx">x</span> <span class="nx">dd</span> <span class="s2">&quot;normal map x to dd</span>
+<span class="s2">:nmap z x  &quot;</span><span class="nx">normal</span> <span class="kt">map</span> <span class="nb">z</span> <span class="k">to</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">but</span> <span class="nb">z</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">recursivly</span> <span class="nx">mapped</span> <span class="k">to</span> <span class="nx">dd</span>
+
+<span class="p">:</span><span class="nx">nnoremap</span> <span class="nx">x</span> <span class="nx">dd</span>
+<span class="p">:</span><span class="nx">nnoremap</span> <span class="nb">z</span> <span class="nx">x</span>  <span class="p">:</span><span class="nx">x</span> <span class="nx">will</span> <span class="nb">delete</span> <span class="nx">a</span> <span class="nx">whole</span> <span class="nb">line</span><span class="p">,</span> <span class="nb">z</span> <span class="nx">will</span> <span class="nb">delete</span> <span class="nx">one</span> <span class="n">character.</span>
+
+<span class="k">In</span> <span class="nx">every</span> <span class="nb">mode</span> <span class="nx">of</span> <span class="nx">vim</span><span class="p">,</span> <span class="nx">there</span> <span class="nx">is</span> <span class="nx">a</span> <span class="kt">map</span> <span class="nb">method</span>
+
+<span class="nx">noremap</span>
+<span class="nx">nnoremap</span>
+<span class="nx">inoremap</span>
+<span class="nx">vnoremap</span>
+<span class="nx">onoremap</span>
+
+<span class="nx">autocmd</span> <span class="nx">Filetype</span> <span class="nb">javascript</span> <span class="nx">nnoremap</span> <span class="o">&lt;</span><span class="nx">buffer</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nx">leader</span><span class="o">&gt;</span><span class="nx">c</span> <span class="nx">I</span><span class="c1">//&lt;esc&gt; &quot;this map only works under current buff</span>
+
+<span class="p">:</span><span class="nx">onoremap</span> <span class="nx">p</span> <span class="nx">i</span><span class="p">(</span>    <span class="nx">e.g.</span><span class="p">:</span> <span class="nx">ci</span><span class="p">(</span> <span class="o">==</span> <span class="nx">cp</span>
+</pre></div>
+
+
+<h3 id="lecture-10">Lecture 10</h3>
+<p><strong>regular expression search</strong></p>
+<div class="hlcode"><pre><span class="nb">set</span> <span class="nx">hlsearch</span>
+<span class="nb">set</span> <span class="nx">incsearch</span>
+
+<span class="p">:</span><span class="nx">help</span> <span class="nx">magic</span>
+<span class="nx">nnoremap</span> <span class="o">/</span> <span class="o">/\</span><span class="nx">v</span> <span class="s2">&quot;Use reg search</span>
+<span class="s2">vnoremap / /</span><span class="se">\v</span><span class="s2"></span>
+<span class="s2">nnoremap ? ?</span><span class="se">\v</span><span class="s2"></span>
+<span class="s2">nnoremap ? ?</span><span class="se">\v</span><span class="s2"></span>
+
+<span class="s2">nnoremap &lt;leader&gt;&lt;space&gt; :noh  &quot;</span><span class="nx">no</span> <span class="nx">highlight</span>
+
+<span class="nb">Search</span> <span class="nb">first</span> <span class="ow">and</span> <span class="nx">substitue</span>
+<span class="o">/\</span><span class="nx">vone</span>  <span class="s2">&quot;all one is highlight</span>
+<span class="s2">:%s//WON/ &quot;</span><span class="nx">vim</span> <span class="nx">will</span> <span class="nb">replace</span> <span class="kc">all</span> <span class="nx">the</span> <span class="nx">highlighted</span> <span class="nx">one</span> <span class="k">with</span> <span class="nx">WON</span>
+</pre></div>
+
+
+<h3 id="lecture-11">Lecture 11</h3>
+<div class="hlcode"><pre><span class="n">gj</span>
+<span class="n">gk</span>
+<span class="n">g0</span>
+<span class="n">g</span><span class="err">$</span>
+<span class="n">nnoremap</span> <span class="n">j</span> <span class="n">gj</span>
+
+<span class="n">gf</span> <span class="s">&quot;open the file under the cursor</span>
+
+<span class="o">:</span><span class="n">bd</span><span class="o">!</span> <span class="s">&quot;delete the current buffer</span>
+
+<span class="n">J</span> <span class="s">&quot;join the next line, seperated with space</span>
+<span class="n">K</span> <span class="s">&quot;man page for the word under current cursor</span>
+<span class="o">:</span><span class="n">help</span> <span class="n">K</span>
+
+<span class="n">zz</span> <span class="s">&quot;move current line to the middle of the screen</span>
+
+<span class="n">visual</span> <span class="n">mode</span>
+<span class="n">o</span> <span class="s">&quot;toggle cursor between the corner of the block</span>
+<span class="n">O</span> <span class="s">&quot;between the same line corner</span>
+
+<span class="p">.</span> <span class="s">&quot;repeat last action</span>
+<span class="n">fs</span> <span class="p">;</span> <span class="p">,</span> <span class="o">*</span> <span class="err">#</span> <span class="o">%</span>
+</pre></div>
+
+
+<h3 id="lecture-12">Lecture 12</h3>
+<p><strong>vim function</strong></p>
+<div class="hlcode"><pre><span class="nx">function</span><span class="o">!</span> <span class="nx">AddHelloToTop</span><span class="p">()</span>
+    <span class="nx">normal</span> <span class="nx">HOhello</span> <span class="nx">there</span><span class="p">^</span><span class="err">[</span><span class="nx">A</span> <span class="nx">vim</span> <span class="nb">user</span><span class="p">^</span><span class="err">[</span> <span class="s2">&quot;^[ represent for ESC use &lt;c-v&gt;Esc to get it.</span>
+<span class="s2">    s/hello there/hi/</span>
+<span class="s2">    return &quot;</span><span class="nx">we</span> <span class="nb">add</span> <span class="nx">a</span> <span class="nx">message</span><span class="s2">&quot;</span>
+<span class="s2">endfunction</span>
+
+<span class="s2">:call AddHelloToTop()</span>
+
+<span class="s2">command! Hello call AddHelloToTop()</span>
+
+<span class="s2">:Hello</span>
+
+<span class="s2">nnoremap &lt;leader&gt;h :call AddHelloToTop()&lt;cr&gt; &quot;</span><span class="o">&lt;</span><span class="nx">cr</span><span class="o">&gt;</span> <span class="nx">hit</span> <span class="nx">enter</span>
+
+<span class="p">:</span><span class="nx">echom</span> <span class="nx">AddHelloToTop</span><span class="p">()</span> <span class="s2">&quot;echom add the message to messages list</span>
+<span class="s2">:messages  &quot;</span><span class="nx">show</span> <span class="kc">all</span> <span class="nx">the</span> <span class="nx">messages</span>
+</pre></div>
+
+
+<h3 id="lecture-13">Lecture 13</h3>
+<p><strong>auto completion</strong></p>
+<div class="hlcode"><pre><span class="nt">&lt;c</span><span class="na">-n</span><span class="nt">&gt;</span>
+<span class="nt">&lt;c</span><span class="na">-p</span><span class="nt">&gt;</span>
+
+function! InsertTabWrapper()
+    let col = col(&quot;.&quot;) - 1
+    if !col || getline(&quot;.&quot;)<span class="cp">[</span><span class="nx">col</span> <span class="o">-</span> <span class="mi">1</span><span class="cp">]</span> !~ &#39;\k&#39;
+        return &quot;\<span class="nt">&lt;tab&gt;</span>&quot;
+    else
+        return &quot;\<span class="nt">&lt;c</span><span class="na">-n</span><span class="nt">&gt;</span>&quot;
+ endfunction
+
+ inoremap <span class="nt">&lt;tab&gt;</span> <span class="nt">&lt;c</span><span class="na">-r</span><span class="nt">&gt;</span>=InsertTabWrapper()<span class="nt">&lt;cr&gt;</span>
+ inoremap <span class="nt">&lt;s</span><span class="na">-tab</span><span class="nt">&gt;</span> <span class="nt">&lt;c</span><span class="na">-p</span><span class="nt">&gt;</span>
+</pre></div>
+
+
+<h3 id="lecture-14">Lecture 14</h3>
+<p><strong>different filetype specific setting</strong></p>
+<div class="hlcode"><pre><span class="o">~/</span><span class="p">.</span><span class="n">vim</span><span class="o">/</span><span class="n">ftplugin</span><span class="o">/</span><span class="n">javascript</span><span class="p">.</span><span class="n">vim</span>
+
+<span class="n">you</span> <span class="n">need</span> <span class="n">filetype</span> <span class="n">plugin</span> <span class="n">indent</span> <span class="n">on</span> <span class="n">in</span> <span class="p">.</span><span class="n">vimrc</span>
+</pre></div>
+
+
+<h3 id="lecture-15">Lecture 15</h3>
+<p><strong>abbreviations</strong></p>
+<div class="hlcode"><pre><span class="o">:</span><span class="nx">abbrev</span> <span class="nx">teh</span> <span class="nx">the</span>  <span class="err">&quot;自动纠正</span> <span class="nx">teh</span> <span class="err">为</span> <span class="nx">the</span><span class="err">，适用于有一些经常打错的词</span>
+
+<span class="nx">inoreabbrev</span> <span class="nx">teh</span> <span class="nx">the</span>
+<span class="nx">inoreabbrev</span> <span class="nx">fu</span> <span class="kd">function</span>
+<span class="nx">cnoreabbrev</span> <span class="nx">Wq</span> <span class="nx">wq</span>
+<span class="nx">cnoreabbrev</span> <span class="nx">WQ</span> <span class="nx">wq</span>
+<span class="nx">cnoreabbrev</span> <span class="nx">wrap</span> <span class="nx">set</span> <span class="nx">wrap</span>
+<span class="nx">cnoreabbrev</span> <span class="nx">nowrap</span> <span class="nx">set</span> <span class="nx">nowrap</span>
+</pre></div>
+
+
+<h3 id="lecture-16">Lecture 16</h3>
+<p><strong>statusline</strong></p>
+<div class="hlcode"><pre><span class="o">:</span><span class="n">help</span> <span class="n">statusline</span>
+</pre></div>
+
+
+<h3 id="lecture-17">Lecture 17</h3>
+<p><strong>find plugin for your language</strong></p>
+<p>e.g.: coffeescript</p>
+<h3 id="lecture-18">Lecture 18</h3>
+<p><strong>Plugin: vim.surroud</strong></p>
+<div class="hlcode"><pre><span class="err">快速增减括号</span><span class="p">,</span><span class="err">引号之类的包围符号</span><span class="p">.</span>
+
+<span class="n">cs</span><span class="s">&quot;&#39;  &quot;</span><span class="err">替换双引号为单引号</span>
+<span class="n">cst</span><span class="s">&quot;  &quot;</span><span class="err">替换包围符为双引号</span>
+<span class="n">ds</span><span class="s">&quot;   &quot;</span><span class="err">删除包围符</span><span class="s">&quot;</span>
+<span class="n">ysiw</span><span class="p">]</span> <span class="s">&quot;在光标下的单词周围加上[]包围符.  iw是一个文本对象，即光标下的单词.</span>
+<span class="n">yss</span> <span class="n">yS</span> <span class="n">ySS</span> <span class="err">整行操作</span><span class="p">.</span>
+<span class="err">在包围符号为括时，输入左括号</span><span class="p">(</span><span class="err">或者</span><span class="p">{,</span><span class="err">则会留一个空格</span><span class="p">.</span>
+</pre></div>
+
+
+<h3 id="lecture-19">Lecture 19</h3>
+<p><strong>Plugin: snipmate</strong></p>
+<h3 id="lecture-20">Lecture 20</h3>
+<p><strong>janus</strong> vim distrbution</p>
+<div class="hlcode"><pre><span class="k">if</span> <span class="n">filereadable</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="s">&quot;~/.vimrc.before&quot;</span><span class="p">))</span>
+    <span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">vimrc</span><span class="p">.</span><span class="n">before</span>
+ <span class="n">endif</span>
+</pre></div>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>

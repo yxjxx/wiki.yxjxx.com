@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>markdown - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Tool">Tool</a>&nbsp;»&nbsp;markdown</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">markdown</div>
+  <div id="content">
+  <h2 id="_1">参考资料列表：</h2>
+<ol>
+<li><a href="http://ghosertblog.github.io/mdeditor/">简明手册</a>  <strong>同时可以作为在线编辑器</strong></li>
+<li><a href="http://wowubuntu.com/markdown/">官方说明的简体中文翻译版</a></li>
+<li><a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a>  <strong>github增强版的Markdown</strong></li>
+</ol>
+<hr />
+<h2 id="_2">在用的编辑器</h2>
+<ol>
+<li><strong>windows</strong> : <a href="http://markdownpad.com/">MarkdownPad</a>(免费版不支持代码块，收费版没用过)</li>
+<li><strong>Linux</strong> : ReText <code>#sudo apt-get install retext</code></li>
+<li><strong>Win&amp;Linux</strong> <a href="http://www.mdcharm.com/download.html">mdcharm</a> （win下的版本2013年4月开始收费,显示效果最接近github）</li>
+<li><strong>Mac</strong> : <a href="http://mouapp.com/">Mou</a> （国产精品，Mac下最好的Markdown编辑器）</li>
+<li><strong>Online</strong> : <a href="http://dillinger.io/#">Dillinger</a>  （多种主题切换，蛮漂亮的）</li>
+</ol>
+<hr />
+<h2 id="_3">笔记</h2>
+<h4 id="1">1. 斜体和粗体</h4>
+<div class="hlcode"><pre><span class="o">*</span><span class="err">斜体</span><span class="o">*</span>
+<span class="n">_</span><span class="err">斜体</span><span class="n">_</span>
+<span class="o">**</span><span class="err">粗体</span><span class="o">**</span>
+<span class="n">__</span><span class="err">粗体</span><span class="n">__</span>
+</pre></div>
+
+
+<h5 id="_4">效果:</h5>
+<p><em>斜体</em>
+<em>斜体</em>
+<strong>粗体</strong>
+<strong>粗体</strong></p>
+<hr />
+<h4 id="2">2. 多级标题</h4>
+<div class="hlcode"><pre><span class="err">表示一级标题</span>
+<span class="o">=======</span>
+<span class="err">表示二级标题</span>
+<span class="o">-----</span>
+<span class="cp">#一级标题</span>
+<span class="cp">##二级标题</span>
+<span class="cp">###三级标题</span>
+<span class="cp">######最多六级标题</span>
+</pre></div>
+
+
+<h5 id="_5">效果:</h5>
+<h1 id="_6">表示一级标题</h1>
+<h2 id="_7">表示二级标题</h2>
+<h1 id="_8">一级标题</h1>
+<h2 id="_9">二级标题</h2>
+<h3 id="_10">三级标题</h3>
+<h6 id="_11">最多六级标题</h6>
+<hr />
+<h4 id="3">3. 文字增加外链(注意一定要用英文括号)</h4>
+<div class="hlcode"><pre><span class="p">[</span><span class="n">github</span><span class="p">](</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.github.com)</span>
+<span class="o">&lt;</span><span class="n">yourname</span><span class="err">@</span><span class="n">gmail</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span>    <span class="c1">//强制用链接表示，由于GFM会自动识别链接所以不要在github中不要&#39;&lt;&gt;&#39;也行</span>
+<span class="o">&lt;</span><span class="n">yxjxx</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<h5 id="_12">效果</h5>
+<p><a href="https://www.github.com">github</a></p>
+<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#121;&#111;&#117;&#114;&#110;&#97;&#109;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#121;&#111;&#117;&#114;&#110;&#97;&#109;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>    //强制用链接表示</p>
+<p><a href="http://yxjxx.com">http://yxjxx.com</a></p>
+<hr />
+<h4 id="4">4. 图片外链</h4>
+<div class="hlcode"><pre><span class="o">!</span><span class="p">[</span><span class="err">图片说明</span><span class="p">](</span><span class="err">图片网址</span><span class="p">)</span>
+</pre></div>
+
+
+<h5 id="_13">效果:</h5>
+<p><img alt=" 小铃木爱理" src="http://ww2.sinaimg.cn/small/81d2b157jw1e7jaf55ttuj20rs15o0yd.jpg" />
+<!--<img alt="铃木爱理" src="http://ww2.sinaimg.cn/mw690/81d2b157jw1e7jaf55ttuj20rs15o0yd.jpg" />--></p>
+<hr />
+<h4 id="5">5. 换行</h4>
+<div class="hlcode"><pre><span class="err">行末增加两个空格表示换行</span>
+<span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="err">也能表示换行</span>
+</pre></div>
+
+
+<h5 id="_14">效果:</h5>
+<p>你好<br/>
+世界</p>
+<hr />
+<h4 id="6-">6. *,- ,+都能表示无序列表</h4>
+<div class="hlcode"><pre><span class="o">+</span> <span class="err">首先</span>
+<span class="o">+</span> <span class="err">其次</span>
+<span class="o">+</span> <span class="err">然后</span>
+<span class="o">+</span> <span class="err">最后</span>
+<span class="o">*</span> <span class="err">可以</span>
+<span class="o">*</span> <span class="err">混排</span>
+</pre></div>
+
+
+<h5 id="_15">效果:</h5>
+<p>+首先
++其次
++然后
++最后
+-可以
+*混排</p>
+<h5 id="_16">(为什么不行?)</h5>
+<h5 id="_17">因为缺少了一个空格</h5>
+<ul>
+<li>首先</li>
+<li>其次</li>
+<li>然后</li>
+<li>最后</li>
+<li>可以</li>
+<li>混排</li>
+</ul>
+<hr />
+<h4 id="7">7. 数字加点表示有序列表</h4>
+<div class="hlcode"><pre><span class="mf">1.</span> <span class="err">第一</span><span class="p">(</span><span class="err">和无序一样要有一个空格</span><span class="p">)</span>
+<span class="mf">2.</span> <span class="err">第二</span>
+<span class="mf">3.</span> <span class="err">第三</span>
+<span class="mf">1.</span> <span class="err">不需要数值递增</span>
+<span class="mf">1988.</span> <span class="err">😭</span>
+</pre></div>
+
+
+<h5 id="_18">效果:</h5>
+<ol>
+<li>第一</li>
+<li>第二</li>
+<li>第三</li>
+<li>不需要</li>
+<li>数值递增</li>
+</ol>
+<hr />
+<h4 id="8">8. 文字引用</h4>
+<div class="hlcode"><pre><span class="o">&gt;</span><span class="err">文字引用</span>
+</pre></div>
+
+
+<h5 id="_19">效果:</h5>
+<blockquote>
+<p>这是文字的引用
+多写几行,文字的引用需要自己换行<br/>
+似水年华</p>
+</blockquote>
+<hr />
+<h4 id="9">9. 表示单行代码</h4>
+<div class="hlcode"><pre><span class="err">`</span><span class="n">code</span><span class="p">...</span><span class="err">`</span>   <span class="c1">//`code`(常见于键盘数字键1旁边,HHKB除外它在右上角)</span>
+    <span class="p">(</span><span class="err">这里有</span><span class="mi">4</span><span class="err">个看不到的空格</span><span class="p">)</span><span class="n">code</span>   <span class="c1">//以四个空格或者Tab键开始的行,Tab将完全等同于4个空格,编辑器就是直接把Tab转换成的四个空格,两者本质上没有差别</span>
+</pre></div>
+
+
+<h5 id="_20">效果:</h5>
+<p><code>code...</code>
+C++输出流 <code>cout&lt;&lt;"Hello world!"&lt;&lt;endl</code></p>
+<div class="hlcode"><pre><span class="n">code</span><span class="p">...</span>
+<span class="n">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello Java&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<hr />
+<h4 id="10-markdownpad">10. 加强的代码显示(MarkdownPad　免费版不支持代码块)</h4>
+<div class="hlcode"><pre><span class="err">```普通代码</span>
+<span class="err">$</span><span class="n">sudo</span> <span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="err">$</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;msg&quot;</span>
+<span class="err">$</span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+<span class="err">```</span>
+</pre></div>
+
+
+<h5 id="_21">效果:</h5>
+<div class="hlcode"><pre><span class="err">$</span><span class="n">sudo</span> <span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="err">$</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;msg&quot;</span>
+<span class="err">$</span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+
+
+<p>C++示例</p>
+<div class="hlcode"><pre><span class="vi">#include</span><span class="o">&lt;</span><span class="nx">cstdio</span><span class="o">&gt;</span>
+<span class="vi">#include</span><span class="o">&lt;</span><span class="nx">iostream</span><span class="o">&gt;</span>
+<span class="nx">using</span> <span class="nx">namespace</span> <span class="nx">std</span><span class="p">;</span>
+<span class="nx">int</span> <span class="nx">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">cout</span><span class="o">&lt;&lt;</span><span class="s2">&quot;hello world&quot;</span><span class="p">;</span>
+    <span class="nx">system</span><span class="p">(</span><span class="s2">&quot;pause&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>JavaScript 示例：</p>
+<div class="hlcode"><pre><span class="cm">/**</span>
+<span class="cm">* nth element in the fibonacci series.</span>
+<span class="cm">* @param n &gt;= 0</span>
+<span class="cm">* @return the nth element, &gt;= 0.</span>
+<span class="cm">*/</span>
+<span class="kd">function</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">tmp</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="nx">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+    <span class="nx">a</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</pre></div>
+
+
+<h4 id="11-markdown">11. Markdown中写注释</h4>
+<div class="hlcode"><pre><span class="err">目测写注释的唯一方法就是用</span><span class="o">&lt;!--</span> <span class="o">--&gt;</span><span class="err">了</span>
+<span class="err">因为会转换成</span><span class="n">HTML</span><span class="err">代码</span>
+</pre></div>
+
+
+<h5 id="_22">效果:</h5>
+<p>你好,世界
+<!--你好,世界--></p>
+<hr />
+<h1 id="github-flavored-markdown">Github Flavored Markdown介绍</h1>
+<p><a href="https://help.github.com/articles/github-flavored-markdown">官网的帮助文档</a></p>
+<h4 id="1_1">1. 换行</h4>
+<p>第一行
+第二行
+不用再打两个空格？
+只是在机器认为了应该是两行的时候有效，比如下面的</p>
+<p>Roses are red
+Violets are blue</p>
+<hr />
+<h4 id="2_1">2.改善斜体，避免和程序代码冲突</h4>
+<p><code>GFM ignores multiple underscores in words.</code>
+<em>text</em>
+do_some_worry</p>
+<hr />
+<h4 id="3_1">3.自动识别链接</h4>
+<p>https://yxjxx.me</p>
+<hr />
+<h4 id="4_1">4.文字中部划线的错误标注</h4>
+<p>GFM adds syntax to strikethrough text</p>
+<div class="hlcode"><pre><span class="o">~~</span><span class="n">Mistaken</span> <span class="n">text</span><span class="o">~~</span>
+</pre></div>
+
+
+<p>效果：
+~~Mistaken text~~</p>
+<h4 id="5_1">5. 支持语法高亮的代码块</h4>
+<p>Keep in mind that both types of code blocks need to have a blank line before them:</p>
+<div class="hlcode"><pre><span class="c">#sudo apt-get install gvim</span>
+<span class="c">#sudo apt-get install git</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="cp">#include&lt;cstdio&gt;</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="nb">require</span> <span class="s1">&#39;redcarpet&#39;</span>
+<span class="n">markdown</span> <span class="o">=</span> <span class="no">Redcarpet</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">markdown</span><span class="o">.</span><span class="n">to_html</span>
+</pre></div>
+
+
+<p><a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">查看github支持语法高亮的语言种类</a></p>
+<hr />
+<h4 id="6-tasklist">6. 任务列表（TaskList）</h4>
+<div class="hlcode"><pre><span class="o">-</span><span class="p">[</span> <span class="p">]</span><span class="n">First</span>
+<span class="o">-</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="n">Second</span>
+<span class="o">-</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="n">Third</span>
+</pre></div>
+
+
+<p>效果：
+-[ ]First
+-[x]Second
+-[x]Third</p>
+<p>还有一些不那么常用的</p>
+<h4 id="7-quick-quoting">7. Quick quoting</h4>
+<h4 id="8-name-and-team-mentions-autocomplete">8. Name and Team @mentions autocomplete</h4>
+<h4 id="9-emoji-autocomplete">9. Emoji autocomplete</h4>
+<h4 id="10-issue-autocompletion">10. Issue autocompletion</h4>
+<h4 id="11-zen-mode-fullscreen-writing">11. Zen Mode (fullscreen) writing</h4>
+<h4 id="12-references">12. References</h4>
+<h2 id="_23">说明</h2>
+<p>原文写作于2013年7月，2015年7月整理发布在我的个人 Wiki 上。现在 Mac 上涌现了一大批优秀的 Markdown 编辑器。</p>
+<ol>
+<li>Mou</li>
+<li>Ulysses</li>
+<li>MacDown</li>
+<li>Markdown Plus</li>
+<li>Typora</li>
+<li>Typed</li>
+<li>iA Write Pro</li>
+</ol>
+<p>最让人眼前一年的是 Typora ，它抛弃了左右双栏的传统形势，采用实时渲染的方式。很好的解决了 Markdown 中输入表格的难题。请看<a href="http://sspai.com/30292">少数派介绍文章</a>。</p>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>
