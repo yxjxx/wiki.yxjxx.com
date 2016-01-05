@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>pipe - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Linux">Linux</a>&nbsp;»&nbsp;pipe</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">pipe</div>
+  <div id="content">
+  <h1 id="pipe-base">pipe-base</h1>
+<p>Linux管道重定向基础
+2013/8/17</p>
+<hr />
+<p>管道及重定向就是Linux多命令协作的基础机制
+管道通常用来组合不同命令
+重定向通常用来保存输出信息</p>
+<p><strong>Linux 的 Shell 对数据流进行以下分类定义：</strong></p>
+<div class="hlcode"><pre><span class="mf">1.</span> <span class="n">stdin</span>     <span class="err">标准输入</span>  <span class="err">编号为：</span><span class="mi">0</span>   <span class="err">默认：键盘</span>
+<span class="mf">2.</span> <span class="n">stdout</span>   <span class="err">标准输出</span>  <span class="err">编号为：</span><span class="mi">1</span>   <span class="err">默认：终端</span>
+<span class="mf">3.</span> <span class="n">stderr</span>    <span class="err">标准错误</span>  <span class="err">编号为：</span><span class="mi">2</span>   <span class="err">默认：终端</span>
+</pre></div>
+
+
+<p><strong>重定向用来控制终端数据流：</strong></p>
+<div class="hlcode"><pre><span class="mf">1.</span> <span class="o">&gt;</span>       <span class="err">将标准输入以覆盖形式重定向到指定文件，如：</span><span class="n">ls</span> <span class="o">&gt;</span> <span class="n">outfile</span>
+<span class="mf">2.</span> <span class="o">&gt;&gt;</span>      <span class="err">将标准输入以追加形式重定向到指定文件，如：</span><span class="n">ls</span> <span class="o">&gt;&gt;</span> <span class="n">outfile</span>
+<span class="mf">3.</span> <span class="o">&lt;</span>       <span class="err">重定向标准输入</span>   <span class="err">如：</span><span class="n">grep</span> <span class="n">linuxcast</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span>
+<span class="mf">4.</span> <span class="mi">2</span><span class="o">&gt;</span>      <span class="err">重定向标准错误</span>
+<span class="mf">5.</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>    <span class="err">将标准错误合并到标准输出中</span>
+<span class="mf">6.</span> <span class="o">&amp;&gt;</span>      <span class="err">将标准错误合并到标准输出中</span>
+</pre></div>
+
+
+<p>黑洞设备 : <code>/dev/null</code></p>
+<p><strong>命令执行的判断依据</strong>
+命令回传码:若前一个命令执行的结果为正确,在Linux下面会回传到一个 <code>$?=0</code>的变量中</p>
+<div class="hlcode"><pre><span class="mf">1.</span> <span class="n">cmd1</span> <span class="o">&amp;&amp;</span> <span class="n">cmd2</span> <span class="err">如果</span><span class="mi">1</span> <span class="n">stdout</span><span class="p">,</span><span class="err">会执行</span><span class="mi">2</span>
+<span class="mf">2.</span> <span class="n">cmd1</span> <span class="o">&amp;&amp;</span> <span class="n">cmd2</span> <span class="err">如果</span><span class="mi">1</span> <span class="n">stderr</span><span class="p">,</span><span class="err">不会执行</span><span class="mi">2</span>
+<span class="mf">3.</span> <span class="n">cmd1</span> <span class="o">||</span> <span class="n">cmd2</span> <span class="err">如果</span><span class="mi">1</span> <span class="n">stdout</span><span class="p">,</span><span class="err">不会执行</span><span class="mi">2</span>
+<span class="mf">4.</span> <span class="n">cmd1</span> <span class="o">||</span> <span class="n">cmd2</span> <span class="err">如果</span><span class="mi">1</span> <span class="n">stderr</span><span class="p">,</span><span class="err">会执行</span><span class="mi">2</span>
+</pre></div>
+
+
+<p><img alt="Terminal" src="https://i.imgur.com/S1h8HH2.png" /></p>
+<p><strong>管道</strong></p>
+<ol>
+<li>管道命令仅会处理stdout不会去处理stderrout</li>
+<li>管道命令必须要能够接收来自前一个命令的数据成为stdin</li>
+</ol>
+<div class="hlcode"><pre><span class="err">管道“</span><span class="o">|</span><span class="err">”用以将一个命令的标准输出作为另一个命令的标准输入：</span>
+
+<span class="n">cmd1</span> <span class="o">|</span> <span class="n">cmd2</span>
+</pre></div>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>

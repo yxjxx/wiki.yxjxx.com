@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>MOUNT A WINDOWS FILE SYSTEM FROM LINUX - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Linux">Linux</a>&nbsp;»&nbsp;MOUNT A WINDOWS FILE SYSTEM FROM LINUX</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">MOUNT A WINDOWS FILE SYSTEM FROM LINUX</div>
+  <div id="content">
+  <hr />
+<ol>
+<li>$su root</li>
+<li>#mkdir /mnt/win7 (mount is to set a inlet(a folder) of a file system)</li>
+<li>#mount -t ntfs /dev/sda2 /mnt/win7 (man mount to find what those parameters mean)</li>
+<li>#umount /mnt/win7 (umount)</li>
+</ol>
+<hr />
+<h2 id="mount-it-automatically-when-startup">mount it Automatically when startup</h2>
+<ol>
+<li>edit /etc/fstab : add "/dev/sda2 /mnt/win7 ntfs defaults 0 0" after the last line (google "etc/fstab format" to make sense of the sentence)</li>
+<li>test if it will work :</li>
+</ol>
+<div class="hlcode"><pre><span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span>  <span class="o">&gt;</span><span class="n">df</span>
+<span class="n">Filesystem</span>     <span class="mi">1</span><span class="n">K</span><span class="o">-</span><span class="n">blocks</span>    <span class="n">Used</span> <span class="n">Available</span> <span class="n">Use</span><span class="o">%</span> <span class="n">Mounted</span> <span class="n">on</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda8</span>       <span class="mi">37821092</span> <span class="mi">5346220</span>  <span class="mi">30530604</span>  <span class="mi">15</span><span class="o">%</span> <span class="o">/</span>
+<span class="n">none</span>                   <span class="mi">4</span>       <span class="mi">0</span>         <span class="mi">4</span>   <span class="mi">0</span><span class="o">%</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">fs</span><span class="o">/</span><span class="n">cgroup</span>
+<span class="n">udev</span>             <span class="mi">5077160</span>       <span class="mi">4</span>   <span class="mi">5077156</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">dev</span>
+<span class="n">tmpfs</span>            <span class="mi">1018360</span>    <span class="mi">1420</span>   <span class="mi">1016940</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span>
+<span class="n">none</span>                <span class="mi">5120</span>       <span class="mi">0</span>      <span class="mi">5120</span>   <span class="mi">0</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">lock</span>
+<span class="n">none</span>             <span class="mi">5091788</span>   <span class="mi">18156</span>   <span class="mi">5073632</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">shm</span>
+<span class="n">none</span>              <span class="mi">102400</span>      <span class="mi">24</span>    <span class="mi">102376</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">user</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda5</span>         <span class="mi">274407</span>   <span class="mi">44366</span>    <span class="mi">211353</span>  <span class="mi">18</span><span class="o">%</span> <span class="o">/</span><span class="n">boot</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda7</span>       <span class="mi">19553560</span> <span class="mi">3366904</span>  <span class="mi">15170336</span>  <span class="mi">19</span><span class="o">%</span> <span class="o">/</span><span class="n">home</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span>  <span class="o">&gt;</span><span class="n">sudo</span> <span class="n">mount</span> <span class="o">-</span><span class="n">a</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span>  <span class="o">&gt;</span><span class="n">df</span>
+<span class="n">Filesystem</span>     <span class="mi">1</span><span class="n">K</span><span class="o">-</span><span class="n">blocks</span>      <span class="n">Used</span> <span class="n">Available</span> <span class="n">Use</span><span class="o">%</span> <span class="n">Mounted</span> <span class="n">on</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda8</span>       <span class="mi">37821092</span>   <span class="mi">5454492</span>  <span class="mi">30422332</span>  <span class="mi">16</span><span class="o">%</span> <span class="o">/</span>
+<span class="n">none</span>                   <span class="mi">4</span>         <span class="mi">0</span>         <span class="mi">4</span>   <span class="mi">0</span><span class="o">%</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">fs</span><span class="o">/</span><span class="n">cgroup</span>
+<span class="n">udev</span>             <span class="mi">5077160</span>         <span class="mi">4</span>   <span class="mi">5077156</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">dev</span>
+<span class="n">tmpfs</span>            <span class="mi">1018360</span>      <span class="mi">1420</span>   <span class="mi">1016940</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span>
+<span class="n">none</span>                <span class="mi">5120</span>         <span class="mi">0</span>      <span class="mi">5120</span>   <span class="mi">0</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">lock</span>
+<span class="n">none</span>             <span class="mi">5091788</span>     <span class="mi">18156</span>   <span class="mi">5073632</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">shm</span>
+<span class="n">none</span>              <span class="mi">102400</span>        <span class="mi">24</span>    <span class="mi">102376</span>   <span class="mi">1</span><span class="o">%</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">user</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda5</span>         <span class="mi">274407</span>     <span class="mi">44366</span>    <span class="mi">211353</span>  <span class="mi">18</span><span class="o">%</span> <span class="o">/</span><span class="n">boot</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda7</span>       <span class="mi">19553560</span>   <span class="mi">3366888</span>  <span class="mi">15170352</span>  <span class="mi">19</span><span class="o">%</span> <span class="o">/</span><span class="n">home</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span>      <span class="mi">419430396</span> <span class="mi">323037652</span>  <span class="mi">96392744</span>  <span class="mi">78</span><span class="o">%</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">win7</span>
+<span class="err">➜</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yxj</span>  <span class="o">&gt;</span>
+</pre></div>
+
+
+<p>/dev/sda2 mount successfully.</p>
+<hr />
+<p>---EOF---</p>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>
