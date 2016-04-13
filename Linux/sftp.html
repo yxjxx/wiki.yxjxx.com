@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>sftp - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Linux">Linux</a>&nbsp;»&nbsp;sftp</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">sftp</div>
+  <div id="content">
+  <div class="hlcode"><pre><span class="n">sftp</span>
+  <span class="n">Secure</span> <span class="n">File</span> <span class="n">Transfer</span> <span class="n">Program</span><span class="p">.</span>
+  <span class="n">Interactive</span> <span class="n">program</span> <span class="n">to</span> <span class="n">copy</span> <span class="n">files</span> <span class="n">between</span> <span class="n">hosts</span> <span class="n">over</span> <span class="n">SSH</span><span class="p">.</span>
+  <span class="n">For</span> <span class="n">non</span><span class="o">-</span><span class="n">interactive</span> <span class="n">file</span> <span class="n">transfers</span><span class="p">,</span> <span class="n">see</span> <span class="n">scp</span> <span class="n">or</span> <span class="n">rsync</span><span class="p">.</span>
+
+  <span class="o">-</span> <span class="n">Connect</span> <span class="n">to</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">server</span> <span class="n">and</span> <span class="n">enter</span> <span class="n">an</span> <span class="n">interactive</span> <span class="n">command</span> <span class="n">mode</span><span class="o">:</span>
+    <span class="n">sftp</span> <span class="n">remote_user</span><span class="err">@</span><span class="n">remote_host</span>
+
+  <span class="o">-</span> <span class="n">Connect</span> <span class="n">using</span> <span class="n">an</span> <span class="n">alternate</span> <span class="n">port</span><span class="o">:</span>
+    <span class="n">sftp</span> <span class="o">-</span><span class="n">P</span> <span class="n">remote_port</span> <span class="n">remote_user</span><span class="err">@</span><span class="n">remote_host</span>
+
+  <span class="o">-</span> <span class="n">Transfer</span> <span class="n">remote</span> <span class="n">file</span> <span class="n">to</span> <span class="n">the</span> <span class="n">local</span> <span class="n">system</span><span class="o">:</span>
+    <span class="n">get</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_file</span>
+
+  <span class="o">-</span> <span class="n">Transfer</span> <span class="n">local</span> <span class="n">file</span> <span class="n">to</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">system</span><span class="o">:</span>
+    <span class="n">put</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">local_file</span>
+
+  <span class="o">-</span> <span class="n">Transfer</span> <span class="n">remote</span> <span class="n">folder</span> <span class="n">to</span> <span class="n">the</span> <span class="n">local</span> <span class="n">system</span> <span class="n">recursively</span> <span class="p">(</span><span class="n">works</span> <span class="n">with</span> <span class="n">put</span> <span class="n">too</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">get</span> <span class="o">-</span><span class="n">R</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_folder</span>
+
+  <span class="o">-</span> <span class="n">Get</span> <span class="n">list</span> <span class="n">of</span> <span class="n">files</span> <span class="n">on</span> <span class="n">local</span> <span class="n">machine</span><span class="o">:</span>
+    <span class="n">lls</span>
+
+  <span class="o">-</span> <span class="n">Get</span> <span class="n">list</span> <span class="n">of</span> <span class="n">files</span> <span class="n">on</span> <span class="n">remote</span> <span class="n">machine</span><span class="o">:</span>
+    <span class="n">ls</span>
+</pre></div>
+
+
+<p><img alt="sftp_tldr.png" src="../../pics/sftp_tldr.png" /></p>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>
