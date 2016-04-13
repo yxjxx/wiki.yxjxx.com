@@ -32,4 +32,4 @@ sftp
 
 ```
 
-![sftp_tldr.png](../../pics/sftp_tldr.png)
+![sftp_tldr.png](https://i.imgur.com/4lsmNGp.png)
