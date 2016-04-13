@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <title>scp - Wiki · yxjxx</title>
+        <meta name="keywords" content="wiki, markdown, linux, python, mac os x, simiki"/>
+        <meta name="description" content="yxjxx's personal wiki, powered by vim and markdown. Focus on python, Liunx, iOS, and so on."/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container">
+            
+<div id="header">
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Linux">Linux</a>&nbsp;»&nbsp;scp</div>
+</div>
+<div class="clearfix"></div>
+<div id="title">scp</div>
+  <div id="content">
+  <p><img alt="scp_tldr" src="https://i.imgur.com/Uy01yjH.png" /></p>
+<div class="hlcode"><pre><span class="n">scp</span>
+  <span class="n">Secure</span> <span class="n">copy</span><span class="p">.</span>
+  <span class="n">Copy</span> <span class="n">files</span> <span class="n">between</span> <span class="n">hosts</span> <span class="n">using</span> <span class="n">Secure</span> <span class="n">Copy</span> <span class="n">Protocol</span> <span class="n">over</span> <span class="n">SSH</span><span class="p">.</span>
+
+  <span class="o">-</span> <span class="n">Copy</span> <span class="n">a</span> <span class="n">local</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">host</span><span class="o">:</span>
+    <span class="n">scp</span> <span class="n">local_file</span> <span class="n">remote_host</span><span class="o">:/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_file</span>
+
+  <span class="o">-</span> <span class="n">Copy</span> <span class="n">a</span> <span class="n">file</span> <span class="n">from</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">host</span> <span class="n">to</span> <span class="n">a</span> <span class="n">local</span> <span class="n">folder</span><span class="o">:</span>
+    <span class="n">scp</span> <span class="n">remote_host</span><span class="o">:/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_file</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">local_dir</span>
+
+  <span class="o">-</span> <span class="n">Recursively</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="n">directory</span> <span class="n">on</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">host</span> <span class="n">to</span> <span class="n">a</span> <span class="n">local</span> <span class="n">directory</span><span class="o">:</span>
+    <span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">local_dir</span> <span class="n">remote_host</span><span class="o">:/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_dir</span>
+
+  <span class="o">-</span> <span class="n">Copy</span> <span class="n">a</span> <span class="n">file</span> <span class="n">between</span> <span class="n">two</span> <span class="n">remote</span> <span class="n">hosts</span> <span class="n">transferring</span> <span class="n">through</span> <span class="n">the</span> <span class="n">local</span> <span class="n">host</span><span class="o">:</span>
+    <span class="n">scp</span> <span class="o">-</span><span class="mi">3</span> <span class="n">host1</span><span class="o">:/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_file</span><span class="p">.</span><span class="n">ext</span> <span class="n">host2</span><span class="o">:/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_dir</span>
+
+  <span class="o">-</span> <span class="n">Use</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">username</span> <span class="n">when</span> <span class="n">connecting</span> <span class="n">to</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">host</span><span class="o">:</span>
+    <span class="n">scp</span> <span class="n">local_file</span> <span class="n">remote_username</span><span class="err">@</span><span class="n">remote_host</span><span class="o">:/</span><span class="n">remote</span><span class="o">/</span><span class="n">path</span>
+
+  <span class="o">-</span> <span class="n">Use</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">ssh</span> <span class="n">private</span> <span class="n">key</span> <span class="k">for</span> <span class="n">authentication</span> <span class="n">with</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">host</span><span class="o">:</span>
+    <span class="n">scp</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span> <span class="n">local_file</span> <span class="n">remote_host</span><span class="o">:/</span><span class="n">path</span><span class="o">/</span><span class="n">remote_file</span>
+</pre></div>
+</div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 yxjxx.
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+        
+    </body>
+</html>
